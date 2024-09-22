@@ -11,6 +11,9 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
+//Servir archivos estaticos(html) desde la carpeta 'pages'
+app.use(express.static(path.join(__dirname, 'pages')))
+
 // Ruta para manejar el envío del formulario
 app.post('/send', (req, res) => {
     const { firstname, email, phoneNumber, address, comentary  } = req.body;
@@ -32,7 +35,7 @@ app.post('/send', (req, res) => {
     from: email,
     to: process.env.EMAIL_USER, // El correo a donde enviarás los datos
     subject: `Mensaje de ${firstname}`,
-    text: message,
+    text: comentary,
   };
 
     // Envío del email
