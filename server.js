@@ -6,6 +6,9 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.EMAIL_PORT || 3000;
 
+app.use(express.static(path.join(__dirname, 'pages')));
+app.use(express.static(path.join(__dirname)));
+
 // Middleware para parsear datos del formulario
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
