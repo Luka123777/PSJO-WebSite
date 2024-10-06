@@ -93,31 +93,31 @@
             </div>
             
             <div class="section-grid3">
-                <form action="/send-email" method="post" id="formContact" class="needs-validation" novalidate>
+                <form action="/send-email" method="POST" id="formContact" class="needs-validation">
                     <div class="grid3-formulary">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="firstname" placeholder="Ejemplo: Juan Ortiz" required>
+                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Ejemplo: Juan Ortiz" required>
                             <label for="floatingInput">Nombre y Apellido</label>
                             <div class="valid-feedback">
                             </div>
                         </div>                      
                         <div  class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Ejemplo: Juan@gmail.com" required>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Ejemplo: Juan@gmail.com" required>
                             <label for="floatingInput">Correo electrónico </label>
                             <div class="invalid-feedback">
                                 Ingresa un correo válido.
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Ejemplo: 0981584324" pattern="[0-9]{10}" required>
+                            <input type="tel" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Ejemplo: 0981584324" pattern="[0-9]{10}" required>
                             <label for="phoneNumber">Número de celular</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="address" placeholder="Ejemplo: Ciudad del Este, barrio San Miguel" required>
+                            <input type="text" name="address" class="form-control" id="address" placeholder="Ejemplo: Ciudad del Este, barrio San Miguel" required>
                             <label for="floatingInput">¿Desde qué ciudad y barrio nos escribes?</label>
                         </div> 
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="" id="comentary" style="height: 200px" required></textarea>
+                            <textarea class="form-control" name="comentary" placeholder="" id="comentary" style="height: 200px" required></textarea>
                             <label for="floatingTextarea2">¿En qué podemos ayudarte? </label>
                             <div class="invalid-feedback">
                                 ¿No tienes un mensaje para nosotros? 
@@ -174,6 +174,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/server.js"></script>
+    <script src="/js/server.js"></script>
 </body>
 </html>
