@@ -6032,7 +6032,10 @@ header .menu .navbarSty .navbar-menu .nav-item .nav-link:focus {
   color: rgb(84, 63, 63);
 }
 header .menu .navbarSty .navbar-menu .nav-item .dropdown-menu {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+header .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item {
+  background-color: rgba(255, 255, 255, 0);
 }
 header .menu .icons {
   display: flex;
@@ -6054,7 +6057,7 @@ header .menu .icons i:hover {
 
 .content {
   max-width: 100%;
-  padding-top: 4vh;
+  padding-top: 40px;
 }
 .content .grid-content {
   height: auto;
@@ -6070,6 +6073,7 @@ header .menu .icons i:hover {
 .content .grid-content .section-grid1 {
   display: grid;
   grid-column: 1/5;
+  grid-row: 1/2;
   align-items: end;
   margin-bottom: 10px;
 }
@@ -6084,6 +6088,9 @@ header .menu .icons i:hover {
 }
 .content .grid-content .section-grid2 .grid2-text {
   text-align: justify;
+}
+.content .grid-content .section-grid2 .grid2-text h3 {
+  display: none;
 }
 .content .grid-content .section-grid2 .grid2-text p {
   font-family: "Play", sans-serif;
@@ -6126,17 +6133,17 @@ header .menu .icons i:hover {
   opacity: 1; /* Asegúrate de que el placeholder sea visible */
   font-family: "Play", sans-serif;
 }
-.content .grid-content .section-grid3 form .col-12 button {
+.content .grid-content .section-grid3 form .col-12 input {
   background-color: #3a3a3a;
   font-family: "Play", sans-serif;
   border-color: #3a3a3a;
-  width: 25%;
+  width: 125px;
 }
-.content .grid-content .section-grid3 form .col-12 button:hover {
+.content .grid-content .section-grid3 form .col-12 input:hover {
   background-color: #2c2c2c;
   border-color: #2c2c2c;
 }
-.content .grid-content .section-grid3 form .col-12 button:focus {
+.content .grid-content .section-grid3 form .col-12 input:focus {
   box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
 }
 .content .footer {
@@ -6213,6 +6220,36 @@ header .menu .icons i:hover {
   }
   .navbarSty ul li a {
     font-size: 1.5vh !important;
+  }
+  .content {
+    margin-top: 100px;
+  }
+  .content .grid-content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .content .grid-content .section-grid1 {
+    display: none;
+  }
+  .content .grid-content .section-grid2 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+  }
+  .content .grid-content .section-grid2 .grid2-text {
+    text-decoration: none;
+  }
+  .content .grid-content .section-grid2 .grid2-text h3 {
+    display: block;
+    font-size: clamp(2rem, 3vw + 2rem, 3.5vw);
+    font-family: "Roboto Slab", serif;
+    border-bottom: 2px solid black;
+  }
+  .content .grid-content .section-grid2 .grid2-text img {
+    display: none;
+  }
+  .content .grid-content .section-grid3 {
+    grid-column: 1/5;
+    grid-row: 2/4;
   }
   .footer {
     flex-direction: column;

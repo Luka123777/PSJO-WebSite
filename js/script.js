@@ -44,9 +44,11 @@ window.addEventListener('scroll', function() {
 
 //Esto hace que cuando la pagina se actualice el header no se muestre
 window.onload = function() {
-    // Scroll hacia arriba al cargar la página
-    window.scrollTo(0, 0);
-}
+    // Solo desplaza hacia arriba si no hay un hash en la URL
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    }
+};
 
 //Ocultar el submenu al dar click sobre una superficie que no sean los links o el resto del menu
 
@@ -70,7 +72,6 @@ document.querySelectorAll('#navbar .a-js-close').forEach(function(link){
 
 //Validacion de formulario.
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
   
@@ -89,3 +90,21 @@ document.querySelectorAll('#navbar .a-js-close').forEach(function(link){
         }, false)
       })
   })()
+
+//Galeria de imagenes
+
+const fulImgBox = document.getElementById("fulImgBox")
+const fulImg = document.getElementById("fulImg")
+const close = document.getElementById("btnClose")
+const GalleryImage = document.querySelectorAll(".Open-imagen")
+
+GalleryImage.forEach(img =>{ //por que no se pone()?
+    img.addEventListener('click',()=>{
+        fulImgBox.style.display = "flex"
+        fulImg.src = img.src 
+    })
+})
+
+close.addEventListener('click', ()=>{
+    fulImgBox.style.display = "none";
+})

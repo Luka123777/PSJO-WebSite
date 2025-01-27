@@ -4,12 +4,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/CSS/contactus.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <title>Parroquia San Jose Obrero</title>
+    <link rel="stylesheet" href="/CSS/contactus.css">
+    <title>Parroquia San José Obrero</title>
 </head>
 <body>
     <header id="header">
@@ -32,7 +32,7 @@
                           La parroquia
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item a-js-close" href="#">Nuestra Historia</a></li>
+                          <li><a class="dropdown-item a-js-close" href="/pages/aboutUs.html">Nuestra Historia</a></li>
                           <li><a class="dropdown-item a-js-close" href="#">Recursos</a></li>
                           <li><a class="dropdown-item a-js-close" href="#">Donativos</a></li>
                           <li><a class="dropdown-item a-js-close" href="/pages/contact.html">Contacto</a></li>
@@ -53,6 +53,7 @@
                           <li><a class="dropdown-item a-js-close" href="#">Confirmación</a></li>
                           <li><a class="dropdown-item a-js-close" href="#">Unción de los enfermos</a></li>
                           <li><a class="dropdown-item a-js-close" href="#">Matrimonio</a></li>
+                          <li><a class="dropdown-item a-js-close" href="#">Orden sagrado</a></li>
                         </ul>
                       </li>
                 </ul>
@@ -81,19 +82,20 @@
 
             <div class="section-grid2">
                 <div class="grid2-text">
+                    <h3>¡Contáctenos!</h3>
                     <p>
-                        Estamos aquí para acompañarte en cada paso de tu camino hacia tu fe. Si tiene alguna duda sobre los sacramentos, necesita una oración, o simplemente quieres conocernos mejor, no dude en ponerse en contacto con nosotros.
+                        Si tiene alguna duda sobre los sacramentos, necesita una oración, o simplemente quieres conocernos mejor, no dude en ponerse en contacto con nosotros.
                         Puedes <a href="/pages/index.html#horarios-content">visitarnos <i class="fa-solid fa-arrow-up-right-from-square"></i></a> en persona, llamarnos, o enviarnos un mensaje a través de este formulario de contacto. Nuestra iglesia está lista para escucharte y ofrecerte el apoyo que necesitas.
                     </p>
-                    <img src="/images/ContactUS/Image1.jpg" alt="">
+                    <img src="/images/ContactUS/Image1.jpg" class="img-fluid" alt="Responsive image">
                     <p>
-                        Envíanos un mensaje por <a href="https://api.whatsapp.com/send?phone=%2B595993583700&context=ARDOexM8Iqppxq6_ju-o6B3JviaMtVs2XJ3ke8npVuI1tpFJeN9AqKXdo2kRaowPbdyyH5RH1DAG9Q6TSwK6zpzaRY4PsvSQUvIsIcYzgbJZN9XLeIoD5hfX8p3ElaoXbMe3RDc50A3k2LLW9qC2ExlX8g&source=FB_Page&app=facebook&entry_point=page_cta" target="_blank">WhatsApp <i class="fab fa-whatsapp" ></i></a> o llámanos por este número de teléfono:  +595 993 583700
+                        O envíanos un mensaje por <a href="https://api.whatsapp.com/send?phone=%2B595993583700&context=ARDOexM8Iqppxq6_ju-o6B3JviaMtVs2XJ3ke8npVuI1tpFJeN9AqKXdo2kRaowPbdyyH5RH1DAG9Q6TSwK6zpzaRY4PsvSQUvIsIcYzgbJZN9XLeIoD5hfX8p3ElaoXbMe3RDc50A3k2LLW9qC2ExlX8g&source=FB_Page&app=facebook&entry_point=page_cta" target="_blank">WhatsApp <i class="fab fa-whatsapp" ></i></a> o llámanos por este número de teléfono:  +595 993 583700
                     </p>
                 </div>
             </div>
             
             <div class="section-grid3">
-                <form action="/send-email" method="POST" id="formContact" class="needs-validation">
+                <form id="form" class="needs-validation">
                     <div class="grid3-formulary">
                         <div class="form-floating mb-3">
                             <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Ejemplo: Juan Ortiz" required>
@@ -117,7 +119,7 @@
                             <label for="floatingInput">¿Desde qué ciudad y barrio nos escribes?</label>
                         </div> 
                         <div class="form-floating">
-                            <textarea class="form-control" name="comentary" placeholder="" id="comentary" style="height: 200px" required></textarea>
+                            <textarea class="form-control" name="commentary" placeholder="" id="commentary" style="height: 200px" required></textarea>
                             <label for="floatingTextarea2">¿En qué podemos ayudarte? </label>
                             <div class="invalid-feedback">
                                 ¿No tienes un mensaje para nosotros? 
@@ -126,9 +128,17 @@
                     </div>
                     <br>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Enviar correo</button>
-                    </div>
+                        <input type="submit" class="btn btn-success" id="button" value="Enviar" >
+                    </div> 
+                    
                 </form>
+
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                <script type="text/javascript">
+                emailjs.init('dMH2XUNbXLbsJok2n')
+                </script>
+
             </div>
         </div>
 
@@ -172,8 +182,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/server.js"></script>
+
+    <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form').addEventListener('submit', function(eventSend) {
+        eventSend.preventDefault();
+
+        btn.value = 'Enviando...';
+
+        const serviceID = 'service_halghnh';
+        const templateID = 'template_ld68iye';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+            btn.value = 'Correo enviado!';
+            }, (err) => {
+            btn.value = 'Correo no enviado';
+            alert('El correo no se pudo enviar.');
+            });
+        });
+    </script>
+    
 </body>
 </html>
