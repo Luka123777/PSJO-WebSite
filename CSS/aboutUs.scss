@@ -42,8 +42,8 @@ header {
         justify-content: space-between;
 
         .logo{
-            width: 175px;
-            max-height: 80px;
+            width: clamp(10rem, 3vw + 2rem, 3.5vw);
+            height: auto;
         }
 
         #menu{

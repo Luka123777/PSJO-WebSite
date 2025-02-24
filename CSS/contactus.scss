@@ -42,8 +42,8 @@ header {
         justify-content: space-between;
 
         .logo{
-            width: 175px;
-            max-height: 80px;
+            width: clamp(10rem, 3vw + 2rem, 3.5vw);
+            height: auto;
         }
 
         #menu{
@@ -226,7 +226,7 @@ header {
 
                             .form-control:focus::placeholder{
                                 color: #6c757d;
-                                opacity: 1; /* Asegúrate de que el placeholder sea visible */
+                                opacity: 1; 
                                 font-family: $letra-secundaria;
                                 
                               }   

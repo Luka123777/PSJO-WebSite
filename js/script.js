@@ -1,3 +1,6 @@
+// import 'bootstrap/dist/css/bootstrap.min.css'; // Importa el CSS de Bootstrap
+// import 'bootstrap'; // Importa los componentes JS de Bootstrap
+
 var swiper = new Swiper(".mySwiper",{
     autoplay: {
         delay: 2500, // Time between slides in milliseconds
@@ -34,7 +37,7 @@ let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', function() {
     var header = document.getElementById('header');
-    var triggerPoint = document.documentElement.getAttribute('data-trigger-point') || 160; // Distance from the top to trigger the header
+    var triggerPoint = document.documentElement.getAttribute('data-trigger-point') || 25; // Distance from the top to trigger the header
     if (window.scrollY <= triggerPoint) {
         header.style.top = '0';
     } else {
@@ -103,8 +106,48 @@ GalleryImage.forEach(img =>{ //por que no se pone()?
         fulImgBox.style.display = "flex"
         fulImg.src = img.src 
     })
+    close.addEventListener('click', ()=>{
+        fulImgBox.style.display = "none";
+    });
 })
 
-close.addEventListener('click', ()=>{
-    fulImgBox.style.display = "none";
-})
+//Reprodcutor dinamico de iframes
+
+document.addEventListener("DOMContentLoaded", function () {
+    const videoLinks = document.querySelectorAll(".video-link");
+    const player = document.getElementById("youtube-player");
+    const titleElement = document.getElementById("video-title");
+  
+    videoLinks.forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const videoId = this.dataset.videoId;
+        const videoTitle = this.dataset.videoTitle || "Sin título"; 
+  
+            if (videoId) {
+            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    
+
+            titleElement.textContent = videoTitle;
+    
+            document.querySelectorAll(".list-group-item").forEach(item => {
+                item.classList.remove("active");
+            });
+    
+            this.closest(".list-group-item").classList.add("active");
+            }
+      });
+    });
+});
+
+window.onload = function () {
+    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: "#navbar-example",
+      offset: 50
+    });
+    console.log("ScrollSpy reinicializado después de la carga completa");
+  };
+  
+
+ 

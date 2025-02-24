@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+
+// Definición de variables
+$letra-primaria: "Roboto Slab", serif;
+$letra-secundaria: "Play", sans-serif;
+$letra-varios: 'Open Sans', sans-serif;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    background-image: url('/images/index/header-bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    min-height: 12vh;
+    align-items: center;
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: top 0.25s;
+
+    .menu{
+        font-family: "Roboto Slab", serif;
+        position: absolute;
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo{
+            width: clamp(10rem, 3vw + 2rem, 3.5vw);
+            height: auto;
+        }
+
+        #menu{
+            display: none;
+        }
+
+        #menu:checked + #menu-icon + #navbar{
+            display: block;
+        }
+
+        label{
+            cursor: pointer;
+            display: none;
+            font-size: 5vh;
+            padding-right: 4vh;
+        }
+
+        .navbarSty{
+            justify-content: center;
+
+            ul li {
+                float: left;
+                padding: 10px;
+                position: relative;
+            }
+
+            ul li a{
+                font-size: 20px;
+                padding: 1vh;
+                color: black;
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+                /* transition: color 0.3s ease-out; */
+            }
+
+            ul li a:hover{
+                color: rgb(84, 63, 63);
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .navbar-menu {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                .nav-item{
+                    outline: none;
+
+                    .nav-link:focus{
+                        color: rgb(84, 63, 63);   
+                    }
+
+                    .dropdown-menu{
+                        background-color: rgba(255, 255, 255, 0.8); 
+
+                        .dropdown-item{
+                            background-color: rgba(255, 255, 255, 0) ;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .icons{
+            display: flex;
+
+            .icon-link{
+                cursor:default;
+                text-decoration: none;
+
+            }
+
+            i{
+                font-size: 2vw;
+                color: black;
+                margin: 0.5vw;
+                transition: color 0.3s ease-out;
+                cursor: pointer;
+            }
+
+            i:hover{
+                color: rgb(84, 63, 63);
+            }
+        }
+    }
+}
+//Termina el header
+//Empieza el contenido
+.content{
+    max-width: 100%;
+    padding-top: 100px;
+    height: auto;
+    background-image: url(/images/donations/Fondo-donations.webp);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    padding-bottom: 25px;
+
+    .center{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 70%;
+        height: auto;
+        margin: 0 auto;
+        background-color: #ffffff;
+        margin-bottom: 60px;
+        margin-top: 50px;
+        border-radius: 4px;
+        padding: 30px;
+        gap: 30px;
+
+        .grid1{
+            display: flex;
+            flex-direction: column;
+            gap: 25%;
+           
+            .text1{
+                font-family: $letra-secundaria;
+                padding: 10px;
+            }
+            .text2{
+                font-family: $letra-secundaria;
+                padding: 10px;
+            }
+            
+        }
+       
+        .grid2{
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+        }
+        .grid3{
+            display: flex;
+            flex-direction: column;
+            gap: 25%;
+            margin-top: 50%;
+            
+            .text3{
+                font-family: $letra-secundaria;
+                padding: 10px;
+            }
+            .text4{
+                font-family: $letra-secundaria;
+                padding: 10px;
+            }
+        }
+    }
+
+    .footer{
+        background-color: #3a3a3a;
+        color: white;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .column{
+            flex: 1;
+            padding: 10px ;  
+
+            h3{
+                border-bottom: 1px solid #ffffff;
+                padding-bottom: 1vh;
+                text-decoration: none;
+                font-family: "Roboto Slab", serif;
+            }
+
+            a{
+                display: block;
+                /* margin-bottom: 5px; */
+                font-family: "Play", sans-serif;
+                color: #ffffff;
+                text-decoration: none;
+                display: block;
+                margin: 1.5vh 0 ;
+            }
+
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+
+        p{
+            text-align: center;
+            min-width: 100%;
+            margin: -2px;
+            font-size: smaller;
+        }
+
+        .p-copyright{
+            border-top: 1px solid white;
+        }
+    }
+}
+@media(max-width:991px){
+    /*Empieza el header*/
+    .menu label {
+        display: initial !important;
+    }
+    .menu .navbarSty{
+        position: absolute;
+        right: 0;
+        top: 10vh;
+        width: 50%;
+        background-color: rgb(255, 255, 255, 0.7);
+        display: none;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.25rem;
+     }
+
+     .menu .navbarSty .navbar-menu li a:hover {
+        background-color: rgb(0, 0, 0, 0.05);
+    }
+
+     .menu #navbar ul li{
+        width: 100%;
+     }
+
+     .icons{
+        display: none !important;
+     }
+
+     .menu .navbarSty .navbar-menu .nav-item .dropdown-menu{
+        left: -7px !important;
+      }
+
+    .menu .navbarSty{
+        transform: translateY(0.1vh) ;
+      }
+
+     .navbarSty ul li a{
+        font-size: 1.5vh !important ;
+     }
+     //Termina el header
+     //Empieza el content
+     .content{
+        .center{
+            grid-template-columns: repeat(1, 1fr);
+            max-width: 90%;
+            padding: 0px;
+            background-color:rgb(0, 0, 0, 0);
+            border: none !important;
+
+            .grid1{
+                gap: 30px;
+                margin: 0 auto;
+                min-width: 225px;
+
+                .text1{
+                    width: 70%;
+                    margin: 0 auto;
+                    margin-left: 25%;
+                }
+                .text2{
+                    width: 70%;
+                    margin: 0 auto;
+                    margin-right: 25%;
+                }
+            }
+            .grid2{
+                margin: 0 auto;
+                height: 100%;
+            }
+            .grid3{
+                gap: 30px;
+                margin-top: 0%;
+                margin: 0 auto;
+                min-width: 225px;
+
+                .text3{
+                    width: 70%;
+                    margin: 0 auto;
+                    margin-left:25% ;
+                }
+                .text4{
+                    width: 70%;
+                    margin: 0 auto;
+                    margin-right: 25%;
+                }
+            }
+        }
+     }
+
+     //Empieza el footer
+     .footer{
+        flex-direction: column;
+        align-items: center;
+
+        .column{
+            width: 100%;
+            text-align: center;
+        }
+
+     }
+
+}
+
+@media(width:1024px){
+    .logo{
+        width: 150px;
+        height: 62px;
+    }
+}
