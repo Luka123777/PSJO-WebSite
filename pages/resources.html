@@ -4,21 +4,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
     <link rel="stylesheet" href="/CSS/resources.css">
     <title>resources</title>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" ></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js" ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="/js/script.js" ></script>
+
     <header id="header">
 
         <div class="menu container">
@@ -90,46 +88,119 @@
                     ¿Sabes lo que estás buscando? <br>
                     Consulta nuestro índice o por nuestro buscador <i class="bi bi-arrow-right"></i> 
                 </p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <button class="btn btn-primary" id="openOffcanvas1">
                     <span class="fs-4">Buscar</span> <i class="bi bi-search"></i>
-
                 </button>
-            </div>
-
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Índice</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-                    <input type="text" id="search" placeholder="Buscar">
-                </div>
+                
             </div>
             
+            <div id="offcanvas" class="offcanvas-improvise">
+                <div class="offcanvas-improvise-header border-bottom">
+                    <h5>¿Qué estás buscando?</h5>
+                    <button class="btn-close" id="closeOffcanvas"></button>
+                </div>
+                <div class="offcanvas-improvise-body">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
+                        <input type="search" class="form-control" id="buscador" name="buscador-general" placeholder="guia de misa" aria-label="search" aria-describedby="addon-wrapping">
+                    </div>
+                    <ul class="list-group">
+                        <!-- card1 -->
+                        <a class="list-group-item articulos1" href="#catequesis-ref">banana</a>
+                        <!-- card2 -->
+                        <a class="list-group-item articulos2" href="#feliz-ref">Cuando estés feliz</a>
+                        <a class="list-group-item articulos2" href="#triste-ref">Cuando estés triste</a>
+                        <a class="list-group-item articulos2" href="/pages/test.html">test</a>
+                        <a class="list-group-item articulos2" href="#duelo-ref">Cuando estés en duelo</a>
+                        <a class="list-group-item articulos2" href="#financiero-ref">Cuando estés con problemas financieros</a>
+                        <a class="list-group-item articulos2" href="#animos-ref">Cuando no poseas ánimos</a>
+                        <a class="list-group-item articulos2" href="#pensativo-ref">Cuando estés pensativo o confundido</a>
+                        <a class="list-group-item articulos2" href="#miedo-ref">Cuando estés con miedo o estés asustado</a>
+                        <a class="list-group-item articulos2" href="#paz-ref">Cuando necesitas paz</a>
+                        <a class="list-group-item articulos2" href="#fortaleza-ref">Cuando requieras fortaleza</a></li>
+                        <a class="list-group-item articulos2" href="#enfermo-ref">Cuando estés enfermo</a></li>
+                        <a class="list-group-item articulos2" href="#ira-ref">Cuando estés con ira</a>
+                        <!-- card3 -->
+                        <a class="list-group-item articulos3" href="#psychology-ref-depresion">Depresión - Tri-line</a>
+                        <a class="list-group-item articulos3" href="#psychology-ref-miedo-humano">El mayor miedo del ser humano -Tri-line</a>
+                        <a class="list-group-item articulos3" href="#psychology-ref-oscuridad-dinero">La oscuridad oculta del dinero</a>
+                        <a class="list-group-item articulos3" href="#psychology-ref-vida-perfecta">El experimento de la vida perfecta</a>
+                        <a class="list-group-item articulos3" href="#salud-ref-diabetes">Diabetes - La Hiperactina</a>
+                        <a class="list-group-item articulos3" href="#salud-ref-alcohol">¿De qué manera el alcohol nos embriaga? - Judy Grisel</a>
+                        <a class="list-group-item articulos3" href="#salud-ref-cancer">3 CLAVES para ENTENDER el CÁNCER</a>
+                        <a class="list-group-item articulos3" href="#salud-ref-colera">El Cólera enfermedad (by Global Health Media)</a>
+                        <a class="list-group-item articulos3" href="#religion-ref-Ignacio-loloya">Ignacio de Loyola y el impacto de los Jesuitas - Academia Play</a>
+                        <a class="list-group-item articulos3" href="#religion-ref-principales-religiones">Las principales cinco religiones del mundo - John Bellaimey</a>
+                        <a class="list-group-item articulos3" href="#religion-ref-religion-importancia">Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim</a>
+                        <a class="list-group-item articulos3" href="#religion-ref-Dios-existe">¿Dios existe?</a>
+                        <a class="list-group-item articulos3" href="#ciencia-ref-verdaderos-limites">Los VERDADEROS límites de la humanidad - Kurzgesagt</a>
+                        <a class="list-group-item articulos3" href="#ciencia-ref-carne-personas">¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt</a>
+                        <a class="list-group-item articulos3" href="#ciencia-ref-leche-veneno">Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt</a>
+                        <a class="list-group-item articulos3" href="#ciencia-ref-guerra-drogas">¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt</a>
+                        <!-- card4 -->
+                        <a class="list-group-item articulos4 PadrerNuestro-refS" href="#list-item-1">Oración de El Padre Nuestro</a>
+                        <a class="list-group-item articulos4 AveMaria-refS" href="#list-item-2">Oración Ave María</a>
+                        <a class="list-group-item articulos4 GloriaAlpadre-refS" href="#list-item-3">Oración Gloria al Padre</a>
+                        <a class="list-group-item articulos4 laSalve-refS" href="#list-item-4">Oración La Salve (Salve Regina)</a>
+                        <a class="list-group-item articulos4 AngelCustodio-refS" href="#list-item-5">Oración al Ángel Custodio</a>
+                        <a class="list-group-item articulos4 AngelGuarda-refS" href="#list-item-6">Oración al Ángel de la Guarda</a>
+                        <a class="list-group-item articulos4 SagradaFamilia-refS" href="#list-item-7">Oración a la Sagrada Familia</a>
+                        <a class="list-group-item articulos4 Elcredo-refS" href="#list-item-8">Oración El Credo</a>
+                        <a class="list-group-item articulos4 CredoApostoles-refS" href="#list-item-9">Oración Credo de los Apóstoles</a>
+                        <a class="list-group-item articulos4 regina-refS" href="#list-item-10">Oración Regina Coeli</a>
+                        <a class="list-group-item articulos4 yoConfiezo-refS" href="#list-item-11">Oración Yo Confieso(Acto Penitencial)</a>
+                        <a class="list-group-item articulos4 actoContriccion-refS" href="#list-item-12">Oración Acto de Contrición</a>
+                        <a class="list-group-item articulos4 magnificat-refS" href="#list-item-13">Oración del Magnificat</a>
+                        <a class="list-group-item articulos4 SenorMisericordia-refS" href="#list-item-14">Oración al Señor de la Misericordia</a>
+                        <a class="list-group-item articulos4 OracionManana-refS" href="#list-item-15">Oración de la mañana</a>
+                        <a class="list-group-item articulos4 SanJose-refS" href="#list-item-16">Oración a San José</a>
+                        <a class="list-group-item articulos4 GraciaArrepentimiento-refS" href="#list-item-17">Oración de Petición de la gracia del arrepentimiento</a>
+                        <a class="list-group-item articulos4 JesusCrusificado-refS" href="#list-item-18">Oración a Jesús Crucificado</a>
+                        <a class="list-group-item articulos4 QuedateConmigo-refS" href="#list-item-19">Oración Quédate conmigo Señor</a>
+                        <a class="list-group-item articulos4 CoronillaDivinaMisericordia-refS" href="#list-item-20">Coronilla de la Divina Misericordia</a>
+                        <a class="list-group-item articulos4 SanMiguelArcangel-refS" href="#list-item-21">Oración a San Miguel Arcángel</a>
+                        <a class="list-group-item articulos4 Angelus-refS" href="#list-item-22">Oración del Ángelus</a>
+                        <a class="list-group-item articulos4 LlagaHombroJesus-refS" href="#list-item-23">Oración a la Llaga del hombro de Jesús</a>
+                        <a class="list-group-item articulos4 ConsagraciónVirgenMariaMaximiliano-refS" href="#list-item-24">Oración de consagración a la Virgen María(Maximiliano)</a>
+                        <a class="list-group-item articulos4 SantaBirigida12anos-refS" href="#list-item-25">Oración de Santa Brígida de 12 años</a>
+                        <a class="list-group-item articulos4 SantoRosario-refS" href="#list-item-26">Oración del Santo Rosario</a>
+                        <a class="list-group-item articulos4 SantaBirigida1anos-refS" href="#list-item-27">Oración de Santa Brígida de un año</a>
+                        <a class="list-group-item articulos4 sietedoloresVirgen-refS" href="#list-item-28">Devoción de los 7 Dolores de la Virgen</a>
+                        <a class="list-group-item articulos4 EspirituSanto-refS" href="#list-item-29">Oración al Espíritu Santo</a>
+                        <a class="list-group-item articulos4 DivinoNinoJesus-refS" href="#list-item-30">Oración al Divino Niño Jesús </a>
+                        <a class="list-group-item articulos4 AlmasPurgatorio-refS" href="#list-item-31">Oración por las Almas del Purgatorio</a>
+                        <a class="list-group-item articulos4 ConsagraciónVirgen-Maria-refS" href="#list-item-32">Oración de Consagración a la Virgen María</a>
+
+
+
+
+                        <p id="mensaje-sin-resultados" class="list-group-item">Sin resultados...</p>
+                    </ul>
+                </div>
+            </div> 
         </div>
-        <div class="accordion-container">
+        <div class="accordion-container" id="accordionPanelsStayOpenExample">
             <div class="accordion-1 content-accordion ">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
                                 Catequesis
                             </button>
                       </h2>
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                            <div class="accordion-body">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tortor id nulla mollis, egestas fermentum erat eleifend. Sed eu massa feugiat, pellentesque ligula auctor, suscipit elit. Morbi euismod nisl id metus consectetur iaculis. Mauris placerat mi sit amet vestibulum aliquet. Sed ac eleifend lectus. Nam laoreet pretium facilisis. Maecenas faucibus metus sed ex convallis blandit. Praesent id purus cursus, aliquam dolor ut, sollicitudin tellus. Aenean accumsan sapien ante, et iaculis ligula bibendum venenatis. Nulla eu lacinia nisl. Quisque sodales quam quis nisl pharetra, at vehicula nulla egestas.
+                            <div class="accordion-body" >
+                                <p id="catequesis-ref">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tortor id nulla mollis, egestas fermentum erat eleifend. Sed eu massa feugiat, pellentesque ligula auctor, suscipit elit. Morbi euismod nisl id metus consectetur iaculis. Mauris placerat mi sit amet vestibulum aliquet. Sed ac eleifend lectus. Nam laoreet pretium facilisis. Maecenas faucibus metus sed ex convallis blandit. Praesent id purus cursus, aliquam dolor ut, sollicitudin tellus. Aenean accumsan sapien ante, et iaculis ligula bibendum venenatis. Nulla eu lacinia nisl. Quisque sodales quam quis nisl pharetra, at vehicula nulla egestas.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion-2 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open2"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                                 Lecturas para ti                          
                             </button>
                         </h2>
@@ -137,67 +208,67 @@
                             <div class="accordion-body">
                                 <section class="modals-container">
                                     <div class="group1">
-                                        <p>Cuando estés feliz.</p>
+                                        <p id="feliz-ref" class="articulo1">Cuando estés feliz.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal1">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group2">
-                                        <p>Cuando estés triste.</p>
+                                        <p id="triste-ref">Cuando estés triste.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal2">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group3">
-                                        <p>Cuando estés en duelo.</p>
+                                        <p id="duelo-ref">Cuando estés en duelo.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal3">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group4">
-                                        <p>Cuando estés con problemas financieros.</p>
+                                        <p id="financiero-ref">Cuando estés con problemas financieros.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal4">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group5">
-                                        <p>Cuando no poseas ánimos.</p>
+                                        <p id="animos-ref">Cuando no poseas ánimos.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal5">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group6">
-                                        <p>Cuando estés pensativo o confundido.</p>
+                                        <p id="pensativo-ref">Cuando estés pensativo o confundido.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal6">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group7">
-                                        <p>Cuando estés con miedo o estés asustado.</p>
+                                        <p id="miedo-ref">Cuando estés con miedo o estés asustado.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal7">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group8">
-                                        <p>Cuando necesitas paz.</p>
+                                        <p id="paz-ref">Cuando necesitas paz.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal8">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group9">
-                                        <p>Cuando requieras fortaleza.</p>
+                                        <p id="fortaleza-ref">Cuando requieras fortaleza.</p>
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal9">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group10">
-                                        <p>Cuando estés enfermo.</p>                                    
+                                        <p id="enfermo-ref">Cuando estés enfermo.</p>                                    
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal10">
                                             <i class="bi bi-book"></i>
                                         </button>
                                     </div>
                                     <div class="group11">
-                                        <p>Cuando estés con ira.</p>                                    
+                                        <p id="ira-ref">Cuando estés con ira.</p>                                    
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal11">
                                             <i class="bi bi-book"></i>
                                         </button>
@@ -431,10 +502,10 @@
             </div>
             
             <div class="accordion-3 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                                 Películas y videos educativos
                             </button>
                       </h2>
@@ -455,40 +526,40 @@
                                     </div>
 
                                     <div class="video-list">
-                                        <div class="psychology">
+                                        <div class="psychology" id="psychology-ref">
                                             <ul class="list-group rounded custom-list-group">
                                                 <li class="list-group-item custom-list-item-title fw-semibold">Psicología  <i class="bi bi-display"></i></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="lIyONMmoepU" data-video-title="Depresión - Tri-line">Depresión - Tri-line </a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="H7PobyUKjtg" data-video-title="El mayor miedo del ser humano -Tri-line">El mayor miedo del ser humano -Tri-line </a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="OFfi4U8MLws" data-video-title="La oscuridad oculta del dinero">La oscuridad oculta del dinero</a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="G3qCem3ie04" data-video-title="El experimento de la vida perfecta">El experimento de la vida perfecta</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="psychology-ref-depresion" class="video-link" href="#" data-video-id="lIyONMmoepU" data-video-title="Depresión - Tri-line">Depresión - Tri-line </a></li>
+                                                <li class="list-group-item custom-list-item"><a id="psychology-ref-miedo-humano" class="video-link" href="#" data-video-id="H7PobyUKjtg" data-video-title="El mayor miedo del ser humano -Tri-line">El mayor miedo del ser humano -Tri-line </a></li>
+                                                <li class="list-group-item custom-list-item"><a id="psychology-ref-oscuridad-dinero" class="video-link" href="#" data-video-id="OFfi4U8MLws" data-video-title="La oscuridad oculta del dinero">La oscuridad oculta del dinero</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="psychology-ref-vida-perfecta" class="video-link" href="#" data-video-id="G3qCem3ie04" data-video-title="El experimento de la vida perfecta">El experimento de la vida perfecta</a></li>
                                             </ul>
                                         </div>
-                                        <div class="education">
+                                        <div class="education" id="salud-ref">
                                             <ul class="list-group rounded custom-list-group">
                                                 <li class="list-group-item custom-list-item-title fw-semibold" >Salud  <i class="bi bi-display"></i></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="l3xxCR3LGaI" data-video-title="Diabetes - La Hiperactina">Diabetes - La Hiperactina </a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="SovHLyPemt8" data-video-title="¿De qué manera el alcohol nos embriaga? - Judy Grisel">¿De qué manera el alcohol nos embriaga? - Judy Grisel</a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="Y0BPGlqwI-E" data-video-title="3 CLAVES para ENTENDER el CÁNCER">3 CLAVES para ENTENDER el CÁNCER</a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="tVcmFSF9N6E" data-video-title="El Cólera enfermedad (by Global Health Media)">El Cólera enfermedad (by Global Health Media)</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="salud-ref-diabetes" class="video-link" href="#" data-video-id="l3xxCR3LGaI" data-video-title="Diabetes - La Hiperactina">Diabetes - La Hiperactina </a></li>
+                                                <li class="list-group-item custom-list-item"><a id="salud-ref-alcohol" class="video-link" href="#" data-video-id="SovHLyPemt8" data-video-title="¿De qué manera el alcohol nos embriaga? - Judy Grisel">¿De qué manera el alcohol nos embriaga? - Judy Grisel</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="salud-ref-cancer" class="video-link" href="#" data-video-id="Y0BPGlqwI-E" data-video-title="3 CLAVES para ENTENDER el CÁNCER">3 CLAVES para ENTENDER el CÁNCER</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="salud-ref-colera" class="video-link" href="#" data-video-id="tVcmFSF9N6E" data-video-title="El Cólera enfermedad (by Global Health Media)">El Cólera enfermedad (by Global Health Media)</a></li>
                                             </ul>
                                         </div>
-                                        <div class="religion">
+                                        <div class="religion" id="religion-ref">
                                             <ul class="list-group rounded custom-list-group">
                                                 <li class="list-group-item custom-list-item-title fw-semibold">Religion  <i class="bi bi-display"></i></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="5olNQgL1h0Q" data-video-title="Ignacio de Loyola y el impacto de los Jesuitas">Ignacio de Loyola y el impacto de los Jesuitas - Academia Play</a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="zdLQodlJmsg" data-video-title="Las principales cinco religiones del mundo - John Bellaimey">Las principales cinco religiones del mundo - John Bellaimey</a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="EA6by7YdYj8" data-video-title="Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim">Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim</a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="muSYu_HOCiQ" data-video-title="¿Dios existe?">¿Dios existe?</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="religion-ref-Ignacio-loloya" class="video-link" href="#" data-video-id="5olNQgL1h0Q" data-video-title="Ignacio de Loyola y el impacto de los Jesuitas">Ignacio de Loyola y el impacto de los Jesuitas - Academia Play</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="religion-ref-principales-religiones" class="video-link" href="#" data-video-id="zdLQodlJmsg" data-video-title="Las principales cinco religiones del mundo - John Bellaimey">Las principales cinco religiones del mundo - John Bellaimey</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="religion-ref-religion-importancia" class="video-link" href="#" data-video-id="EA6by7YdYj8" data-video-title="Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim">Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="religion-ref-Dios-existe" class="video-link" href="#" data-video-id="muSYu_HOCiQ" data-video-title="¿Dios existe?">¿Dios existe?</a></li>
                                             </ul>
                                         </div>
-                                        <div class="culture-art">
+                                        <div class="culture-art" id="ciencia-ref">
                                             <ul class="list-group rounded custom-list-group">
                                                 <li class="list-group-item custom-list-item-title fw-semibold" >Ciencia  <i class="bi bi-display"></i></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="7aU5zBpenfE" data-video-title="Los VERDADEROS límites de la humanidad - Kurzgesagt">Los VERDADEROS límites de la humanidad - Kurzgesagt </a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="mGoGHc4oFRE" data-video-title="¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt">¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt </a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="nJkJT1uiFB8" data-video-title="Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt">Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt  </a></li>
-                                                <li class="list-group-item custom-list-item"><a class="video-link" href="#" data-video-id="SRRsKJjthI4" data-video-title="¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt">¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt</a></li>
+                                                <li class="list-group-item custom-list-item"><a id="ciencia-ref-verdaderos-limites" class="video-link" href="#" data-video-id="7aU5zBpenfE" data-video-title="Los VERDADEROS límites de la humanidad - Kurzgesagt">Los VERDADEROS límites de la humanidad - Kurzgesagt </a></li>
+                                                <li class="list-group-item custom-list-item"><a id="ciencia-ref-carne-personas" class="video-link" href="#" data-video-id="mGoGHc4oFRE" data-video-title="¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt">¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt </a></li>
+                                                <li class="list-group-item custom-list-item"><a id="ciencia-ref-leche-veneno" class="video-link" href="#" data-video-id="nJkJT1uiFB8" data-video-title="Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt">Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt  </a></li>
+                                                <li class="list-group-item custom-list-item"><a id="ciencia-ref-guerra-drogas" class="video-link" href="#" data-video-id="SRRsKJjthI4" data-video-title="¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt">¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -499,74 +570,74 @@
                 </div>
             </div>
             <div class="accordion-4 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" >
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+                      <h2 class="accordion-header" >
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open4" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
                                 Rezos y Oraciones
                             </button>
                       </h2>
                         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="container-links">
                                         <div class="list-group" id="list-example" >
-                                            <a class="list-group-item list-group-item-action" href="#list-item-1">Oración de El Padre Nuestro</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-2">Oración Ave María</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-3">Oración Gloria al Padre</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-4">Oración La Salve</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-5">Oración al Ángel Custodio </a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-6">Oración al Ángel de la Guarda</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-7">Oración a la Sagrada Familia</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-8">Oración El Credo</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-9">Oración Credo de los Apóstoles</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-10">Oración Regina Coeli</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-11">Oración Yo Confieso(Acto Penitencial)</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-12">Oración Acto de Contrición</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-13">Oración del Magnificat</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-14">Oración al Señor de la Misericordia</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-15">Oración de la mañana</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-16">Oración a San José</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-17">Oración de Petición de la gracia del arrepentimiento</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-18">Oración a Jesús Crucificado</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-19">Oración Quédate conmigo Señor</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-20">Coronilla de la Divina Misericordia</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-21">Oración a San Miguel Arcángel</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-22">Oración del Ángelus</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-23">Oración a la Llaga del hombro de Jesús</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-24">Oración de consagración a la Virgen María</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-25">Oración de Santa Brígida de 12 años</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-26">Oración del Santo Rosario</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-27">Oración de Santa Brígida de un año</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-28">Devoción de los 7 Dolores de la Virgen</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-29">Oración al Espíritu Santo</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-30">Oración al Divino Niño Jesús</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-31">Oración por las Almas del Purgatorio</a>
-                                            <a class="list-group-item list-group-item-action" href="#list-item-32">Oración de Consagración a la Virgen María</a>
+                                            <a class="list-group-item list-group-item-action PadrerNuestro-ref" href="#list-item-1">Oración de El Padre Nuestro</a>
+                                            <a class="list-group-item list-group-item-action AveMaria-ref" href="#list-item-2">Oración Ave María</a>
+                                            <a class="list-group-item list-group-item-action GloriaAlpadre-ref" href="#list-item-3">Oración Gloria al Padre</a>
+                                            <a class="list-group-item list-group-item-action laSalve-ref" href="#list-item-4">Oración La Salve</a>
+                                            <a class="list-group-item list-group-item-action AngelCustodio-ref" href="#list-item-5">Oración al Ángel Custodio </a>
+                                            <a class="list-group-item list-group-item-action AngelGuarda-ref" href="#list-item-6">Oración al Ángel de la Guarda</a>
+                                            <a class="list-group-item list-group-item-action SagradaFamilia-ref" href="#list-item-7">Oración a la Sagrada Familia</a>
+                                            <a class="list-group-item list-group-item-action Elcredo-ref" href="#list-item-8">Oración El Credo</a>
+                                            <a class="list-group-item list-group-item-action CredoApostoles-ref" href="#list-item-9">Oración Credo de los Apóstoles</a>
+                                            <a class="list-group-item list-group-item-action regina-ref " href="#list-item-10">Oración Regina Coeli</a>
+                                            <a class="list-group-item list-group-item-action yoConfiezo-ref " href="#list-item-11">Oración Yo Confieso(Acto Penitencial)</a>
+                                            <a class="list-group-item list-group-item-action actoContriccion-ref" href="#list-item-12">Oración Acto de Contrición</a>
+                                            <a class="list-group-item list-group-item-action magnificat-ref" href="#list-item-13">Oración del Magnificat</a>
+                                            <a class="list-group-item list-group-item-action SenorMisericordia-ref" href="#list-item-14">Oración al Señor de la Misericordia</a>
+                                            <a class="list-group-item list-group-item-action OracionManana-ref" href="#list-item-15">Oración de la mañana</a>
+                                            <a class="list-group-item list-group-item-action SanJose-ref" href="#list-item-16">Oración a San José</a>
+                                            <a class="list-group-item list-group-item-action GraciaArrepentimiento-ref" href="#list-item-17">Oración de Petición de la gracia del arrepentimiento</a>
+                                            <a class="list-group-item list-group-item-action JesusCrusificado-ref" href="#list-item-18">Oración a Jesús Crucificado</a>
+                                            <a class="list-group-item list-group-item-action QuedateConmigo-ref" href="#list-item-19">Oración Quédate conmigo Señor</a>
+                                            <a class="list-group-item list-group-item-action CoronillaDivinaMisericordia-ref" href="#list-item-20">Coronilla de la Divina Misericordia</a>
+                                            <a class="list-group-item list-group-item-action SanMiguelArcangel-ref" href="#list-item-21">Oración a San Miguel Arcángel</a>
+                                            <a class="list-group-item list-group-item-action Angelus-ref" href="#list-item-22">Oración del Ángelus</a>
+                                            <a class="list-group-item list-group-item-action LlagaHombroJesus-ref" href="#list-item-23">Oración a la Llaga del hombro de Jesús</a>
+                                            <a class="list-group-item list-group-item-action ConsagraciónVirgenMariaMaximiliano-ref" href="#list-item-24">Oración de consagración a la Virgen María(Maximiliano)</a>
+                                            <a class="list-group-item list-group-item-action SantaBirigida12anos-ref" href="#list-item-25">Oración de Santa Brígida de 12 años</a>
+                                            <a class="list-group-item list-group-item-action SantoRosario-ref" href="#list-item-26">Oración del Santo Rosario</a>
+                                            <a class="list-group-item list-group-item-action SantaBirigida1anos-ref" href="#list-item-27">Oración de Santa Brígida de un año</a>
+                                            <a class="list-group-item list-group-item-action sietedoloresVirgen-ref" href="#list-item-28">Devoción de los 7 Dolores de la Virgen</a>
+                                            <a class="list-group-item list-group-item-action EspirituSanto-ref" href="#list-item-29">Oración al Espíritu Santo</a>
+                                            <a class="list-group-item list-group-item-action DivinoNinoJesus-ref" href="#list-item-30">Oración al Divino Niño Jesús</a>
+                                            <a class="list-group-item list-group-item-action AlmasPurgatorio-ref" href="#list-item-31">Oración por las Almas del Purgatorio</a>
+                                            <a class="list-group-item list-group-item-action ConsagraciónVirgen-Maria-ref" href="#list-item-32">Oración de Consagración a la Virgen María</a>
                                         </div>
                                     </div>
-                                    <div class="col-8">
-                                        <div data-bs-smooth-scroll="true" data-bs-spy="scroll" data-bs-target="#list-example"  class="scrollspy-example" tabindex="0">
-                                            <h4 id="list-item-1">Oración de El Padre Nuestro</h4>
-                                            <p>Padre nuestro, que estás en el cielo,
+                                    <div class="container-texts">
+                                        <div  data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                                                <h4 id="list-item-1">Oración de El Padre Nuestro</h4>
+                                                <p>Padre nuestro, que estás en el cielo,
                                                 santificado sea tu Nombre; venga a nosotros tu reino;
                                                 hágase tu voluntad, en la tierra como en el cielo.
                                                 Danos hoy nuestro pan de cada día; perdona nuestras ofensas,
                                                 como también nosotros perdonamos a los que nos ofenden;
                                                 no nos dejes caer en la tentación, y líbranos del mal. Amén.</p>
-                                            <h4 id="list-item-2">Oración Ave María</h4>
-                                            <p>Dios te salve, María, llena eres de gracia;
+                                                <h4 id="list-item-2">Oración Ave María</h4>
+                                                <p>Dios te salve, María, llena eres de gracia;
                                                 el Señor es contigo; Bendita tú eres entre todas las mujeres,
                                                 y bendito es el fruto de tu vientre, Jesús.
                                                 Santa María, Madre de Dios,
                                                 ruega por nosotros, pecadores,
                                                 ahora y en la hora de nuestra muerte. Amén.</p>
-                                            <h4 id="list-item-3">Oración Gloria al Padre</h4>
-                                            <p>Gloria al Padre y al Hijo y al Espíritu Santo.
+                                                <h4 id="list-item-3">Oración Gloria al Padre</h4>
+                                                <p>Gloria al Padre y al Hijo y al Espíritu Santo.
                                                 Como era en el principio, ahora y siempre,
                                                 por los siglos de los siglos. Amén.</p>
-                                            <h4 id="list-item-4">Oración La Salve (Salve Regina)</h4>
-                                            <p>Dios te salve, Reina y Madre de misericordia,
+                                                <h4 id="list-item-4">Oración La Salve (Salve Regina)</h4>
+                                                <p>Dios te salve, Reina y Madre de misericordia,
                                                 vida y dulzura y esperanza nuestra: Dios te salve.
                                                 A ti llamamos los desterrados hijos de Eva;
                                                 a ti suspiramos, gimiendo y llorando en este valle de lágrimas.
@@ -642,7 +713,7 @@
                                                 Gózate y alégrate, Virgen María; aleluya.
                                                 Porque ha resucitado verdaderamente el Señor; aleluya.
                                                 
-                                                <span class="fw-semibold">Oremos</span>
+                                                <span>Oremos</span>
                                                 
                                                 Oh Dios, que por la resurrección de tu Hijo,
                                                 nuestro Señor Jesucristo,
@@ -917,7 +988,7 @@
                                                 que tengas misericordia de mí, pobre pecador,
                                                 y me perdones todos los pecados veniales y mortales que he cometido,
                                                 y me conduzcas al Cielo por el camino de Tu Cruz, amén.</p>
-                                                <h4 id="list-item-24">Oración de consagración a la Virgen María</h4>
+                                                <h4 id="list-item-24">Oración de consagración a la Virgen María(Maximiliano)</h4>
                                                 <p>Dígnate recibir mi alabanza, oh Virgen bendita,
                                                 Inmaculada Concepción, Reina del Cielo y de la Tierra,
                                                 Refugio de los pecadores y Madre amantísima
@@ -1711,26 +1782,258 @@
                 </div>
             </div>
             <div class="accordion-5 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" >
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
-                                Guia de misa
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
+                                Guia de misa y coros
                             </button>
                       </h2>
                         <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
                             <div class="accordion-body">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tortor id nulla mollis, egestas fermentum erat eleifend. Sed eu massa feugiat, pellentesque ligula auctor, suscipit elit. Morbi euismod nisl id metus consectetur iaculis. Mauris placerat mi sit amet vestibulum aliquet. Sed ac eleifend lectus. Nam laoreet pretium facilisis. Maecenas faucibus metus sed ex convallis blandit. Praesent id purus cursus, aliquam dolor ut, sollicitudin tellus. Aenean accumsan sapien ante, et iaculis ligula bibendum venenatis. Nulla eu lacinia nisl. Quisque sodales quam quis nisl pharetra, at vehicula nulla egestas.
+                                <div class="card card1" style="width: 18rem;">
+                                    <img src="/images/resources/card1.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Guía de misa</h5>
+                                        <p class="card-text">Explicación de cada parte de una misa católica habitual.
+                                            <br>Misal Romano, por "Archdiocese of Dubuque".
+                                        </p>
+                                        <a href="/images/resources/guia_para_la_misa.pdf" id="popover-link" download="guia_para_la_misa.pdf" class="btn btn-primary" >Descargar</a>
+                                    </div>
+                                </div>
+                                <div class="card card2" style="width: 18rem;" id="ritos-ref">
+                                    <img src="/images/resources/card2.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ritos iniciales</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> Al inicio de la misa, mientras el sacerdote y los ministros entran en procesión al altar.</p>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal1">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card1Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card1Label">Ritos iniciales - Cantos</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                           <ul class="list-group">
+                                                                <li class="list-group-item popover-link2"><a class="text-dark" download="Ven, ven Señor, no tardes" href="/images/resources/Ritos iniciales/Ven, Ven Señor No Tardes.pdf">"Ven, ven Señor, no tardes - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                                <li class="list-group-item popover-link2"><a class="text-dark" download="Danos un corazón" href="">"Danos un corazón - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                                <li class="list-group-item popover-link2"><a class="text-dark" download="Entraré" href="">"Entraré - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                           </ul>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card3" style="width: 18rem;">
+                                    <img src="/images/resources/card3.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Gloria</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> el Gloria se canta después del saludo inicial del sacerdote y antes de la primera lectura.</p>                                        
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal2">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card2Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card2Label">Gloria - Cantos</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Gloria a dios en el cielo – (Tradicional, Misal Romano)" href="/images/resources/Gloria/Gloria - Tradicional.pdf">"Gloria a dios en el cielo – (Tradicional, Misal Romano) - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Gloria – (Misa Criolla, Ariel Ramírez)" href="/images/resources/Gloria/Gloria-Uriel Ramirez.pdf">"Gloria – (Misa Criolla, Ariel Ramírez) - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>                                                           
+                                                        </ul>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card3-5" style="width: 18rem;">
+                                    <img src="/images/resources/salmo.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Salmo responsorial - Cantos</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> Después de la 1ª Lectura, sigue un Salmo responsorial. Se canta al finalizar la primera lectura, justo antes de empezar la segunda lectura. </p>                                        
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal2-5">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal2-5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card2-5Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card2-5Label">Salmo responsorial - Cantos.</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>En este caso, un salmista debidamente preparado tendrá que recitar el canto para toda la misa.</p>
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Salmos Pupulares" href="/images/resources/Salmo responsorial/Salmos Populares.pdf">"Salmos Pupulares - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="El Señor Es Mi Pastor – (Danilo Montero) " href="/images/resources/Salmo responsorial/El Señor Es Mi Pastor – (Danilo Montero).pdf">El Señor Es Mi Pastor – (Danilo 
+                                                                Montero)  - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Danos un corazón" href="">"Danos un corazón - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                        </ul>      
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card4" style="width: 18rem;">
+                                    <img src="/images/resources/card4.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ofertorio</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> Durante la presentación del pan y el vino en el altar, después de la oración de los fieles.</p>                                       
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal3">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card3Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card3Label">Ofertorio - Cantos </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Bendito seas, Señor - Francisco 
+                                                                Palazón" href="/images/resources/Ofertorio/Bendito seas, Señor - Francisco Palazón.pdf">Bendito seas, Señor - Francisco 
+                                                                Palazón - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Junto al vino y al pan - Toño 
+                                                                Casado" href="/images/resources/Ofertorio/Junto al vino y al pan - Toño Casado.pdf">Junto al vino y al pan - Toño 
+                                                                Casado  - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Te presentamos el vino y el pan - 
+                                                                J. A. Espinosa" href="/images/resources/Ofertorio/Te presentamos el vino y el pan - J.A Espinosa.pdf">Te presentamos el vino y el pan - 
+                                                                J. A. Espinosa - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                        </ul>
+                                                           
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card5" style="width: 18rem;">
+                                    <img src="/images/resources/santo.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Santo</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> Durante la Liturgia de la Eucaristía, después del Prefacio y antes de la Plegaria Eucarística. </p>                                       
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal4">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card4Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card4Label">Santo - Cantos.</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Santo (Alfonso Luna)" href="/images/resources/Santo/Santo (Alfonso Luna).pdf">Santo (Alfonso Luna)  - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                        <li class="list-group-item popover-link2"><a class="text-dark" download="Santo (Misa de la Alegría)" href="/images/resources/Santo/Santo (Misa de la Alegría).pdf">Santo (Misa de la Alegría) - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                        <li class="list-group-item popover-link2"><a class="text-dark" download="Santo es el Señor, mi Dios" href="/images//resources/Santo/Santo es el Señor, mi Dios.pdf">Santo es el Señor, mi Dios - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                        </ul>
+                                                           
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card6" style="width: 18rem;">
+                                    <img src="/images/resources/comunion.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Comunión</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> Durante el Rito de la Comunión, después del Cordero de Dios. Mientras los fieles van a recibir la Eucaristía. </p>                                       
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal5">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card5Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card5Label">Comunión - Cantos
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="EL PUEBLO DE DIOS" href="/images/resources/Comunion/EL PUEBLO DE DIOS.pdf">"EL PUEBLO DE DIOS - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Eucaristía fuente de amor - 
+                                                            DUMAS Y MARYE " href="/images/resources/Comunion/Eucaristía fuente de amor - DUMAS Y MARYE.pdf">"Eucaristía fuente de amor - 
+                                                            DUMAS Y MARYE  - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="VAMOS TODOS A RECIBIR" href="/images/resources/Comunion/VAMOS TODOS A RECIBIR .pdf">"VAMOS TODOS A RECIBIR  - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                        </ul>
+                                                           
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card7" style="width: 18rem;">
+                                    <img src="/images/resources/final.webp" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Final(Himno de despedida)</h5>
+                                        <p class="card-text"><span> Cuándo se canta:</span> Se canta después de la bendición y la despedida del sacerdote, una vez que el sacerdote y los ministros se retiran del altar, comienza el canto final. </p>                                       
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cardmodal6">
+                                            Ver coros
+                                        </button>
+                                        <div class="modal fade" id="cardmodal6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="card6Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="card6Label">Final(Himno de despedida) - Cantos</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                       <ul class="list-group">
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="OH MADRE MÍA – Juan Morales Montero" href="/images/resources/Final(Despedida)/OH MADRE MÍA - Juan Morales Montero.pdf">"OH MADRE MÍA – Juan Morales Montero - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Que alegría cuando me dijeron" href="/images/resources/Final(Despedida)/Que alegria cuando me dijeron.pdf">"Que alegría cuando me dijeron - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                            <li class="list-group-item popover-link2"><a class="text-dark" download="Salve, salve cantando a María" href="/images/resources/Final(Despedida)/Salve, salve cantando a María.pdf">"Salve, salve cantando a María - descargar <i class="bi bi-filetype-pdf"></i>"</a></li>
+                                                       </ul>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion-6 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" >
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true" aria-controls="panelsStayOpen-collapseSix">
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open6" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true" aria-controls="panelsStayOpen-collapseSix">
                                 Guia de misa
                             </button>
                       </h2>
@@ -1743,10 +2046,10 @@
                 </div>
             </div>
             <div class="accordion-7 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" >
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="true" aria-controls="panelsStayOpen-collapseSeven">
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open7" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="true" aria-controls="panelsStayOpen-collapseSeven">
                                 Guia de misa
                             </button>
                       </h2>
@@ -1759,15 +2062,15 @@
                 </div>
             </div>
             <div class="accordion-8 content-accordion">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" >
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingEight">
-                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="true" aria-controls="panelsStayOpen-collapseEight">
+                            <button class="accordion-button collapsed fw-semibold" id="accordion-open8" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="true" aria-controls="panelsStayOpen-collapseEight">
                                 Guia de misa
                             </button>
                       </h2>
                         <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingEight">
-                            <div class="accordion-body">
+                            <div class="accordion-body ">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tortor id nulla mollis, egestas fermentum erat eleifend. Sed eu massa feugiat, pellentesque ligula auctor, suscipit elit. Morbi euismod nisl id metus consectetur iaculis. Mauris placerat mi sit amet vestibulum aliquet. Sed ac eleifend lectus. Nam laoreet pretium facilisis. Maecenas faucibus metus sed ex convallis blandit. Praesent id purus cursus, aliquam dolor ut, sollicitudin tellus. Aenean accumsan sapien ante, et iaculis ligula bibendum venenatis. Nulla eu lacinia nisl. Quisque sodales quam quis nisl pharetra, at vehicula nulla egestas.
                             </div>
                         </div>
@@ -1781,14 +2084,13 @@
                 Prueba con esto <i class="bi bi-arrow-right"></i> 
             </div>
             <div class="button-container">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <button class="btn btn-primary" id="openOffcanvas2">
                     <span class="fs-5">Índice</span> 
-   
                 </button>
             </div>
         </div>
 
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="column">
                 <h3>Enlaces Rápidos</h3>
                 <a href="/pages/index.html#horarios-content">

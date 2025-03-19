@@ -12,24 +12,10 @@ $letra-primaria: "Roboto Slab", serif;
 $letra-secundaria: "Play", sans-serif;
 $letra-varios: 'Open Sans', sans-serif;
 
-$accordion-button-bg: #f0f0f0;  // El nuevo color de fondo del botón del accordion
-$accordion-button-color: #333;   // El nuevo color del texto del botón del accordion
 
-
-
-
-
-* {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
-}
 
 html{
-    // overflow-y: scroll;
     body{
-        // overflow-y: scroll;
         header {
             background-image: url('/images/index/header-bg.jpg');
             background-position: center center;
@@ -42,7 +28,7 @@ html{
             min-width: 100%;
             top: 0;
             left: 0;
-            z-index: 1000;
+            z-index: 4;
             transition: top 0.25s;
         
             .menu{
@@ -150,7 +136,6 @@ html{
         .content{
             max-width: 100%;
             margin-top: 14vh;
-            // overflow-y: scroll;
         
             .presentation{
                 display: flex;
@@ -199,6 +184,51 @@ html{
                         }
                     }
                 }
+                .offcanvas-improvise{
+                    position: fixed;
+                    top: 0;
+                    left: -100%; 
+                    width: 30%;
+                    height: 100%;
+                    background-color: $white;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+                    transition: left 0.3s ease-in-out;
+                    z-index: 5;
+
+                    .offcanvas-improvise-header{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-left: 15px;
+                        padding-right: 15px;
+
+                        h5{
+                            font-family: $letra-primaria;
+                        }
+                        button{
+                            &:focus{
+                                box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                            }
+                        }
+                    }
+                    .offcanvas-improvise-body{
+                        width: 90%;
+                        margin: 0 auto;
+                        margin-top: 15px;
+
+                        .input-group{
+                            input:focus{
+                                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                                border-color: #3a3a3a;
+                            }
+                        }
+                    }
+                }
+                .offcanvas-improvise.open{
+                    left: 0;
+                }
             }
         
             .accordion-container{
@@ -231,14 +261,14 @@ html{
                             }
                             .accordion-button.collapsed{
                                 background-color: $teal-200;
+                                
                             }
                             .accordion-button:not(.collapsed) {
                                 background-color: $teal-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
                         }
                     }
@@ -262,10 +292,10 @@ html{
                                 background-color: $teal-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
+                          
                         }
                         .accordion-collapse{
                             .accordion-body{
@@ -462,10 +492,10 @@ html{
                                 background-color: $blue-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
+                          
                         }
                         .accordion-collapse{
                             .accordion-body{
@@ -596,26 +626,58 @@ html{
                                 background-color: $blue-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
+                           
                         }
                         .accordion-collapse{
                             .accordion-body{
                                 .row{
-                                    .col-4{
+                                    display: grid;
+                                    grid-template-columns: repeat(2,1fr);
+                                    
+                                    .container-links{
                                         .list-group{
                                             position: relative;
-                                            height: 260px;
-                                            overflow: auto;
+                                            height: 400px; 
+                                            overflow-y: auto; 
+                                            overflow-x: hidden;
+                                            font-family: $letra-primaria;
+
+                                            .active{
+                                                background-color: $white;
+                                                color: $black;
+                                                border-color: $black ;
+                                            }
+                                            
                                         }
                                     }
-                                    .col-8{
+                                    .container-texts{
                                         .scrollspy-example{
                                             position: relative;
-                                            height: 520px;
-                                            overflow: auto;
+                                            height: 400px; 
+                                            overflow-y: auto; 
+                                            scroll-behavior: smooth;
+                                                                       
+                                            h4{
+                                            font-family: $letra-secundaria;
+                                            border-bottom: $black 1px solid;
+                                            }
+                                            p{
+                                            font-family: $letra-secundaria;
+                                            line-height: 1.8;
+                                            
+                                                span{
+                                                    font-weight: bolder;
+                                                    display: block;
+                                                    text-align: center;
+                                                }
+                                                .cursive{
+                                                    font-style: italic ;
+                                                }
+                                                
+                                            }
                                         }
                                     }
                                 }
@@ -642,9 +704,486 @@ html{
                                 background-color: $red-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
+                            }
+                            
+                        }
+                        .accordion-collapse{
+                            .accordion-body{
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                flex-direction: row;
+                                gap: 5%;
+
+                                .card1{
+                                    flex: 1 1 14rem; //(crecimiento) (encogimiento) (tamaño base)
+                                    max-width: 100%; 
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+
+                                        }
+                                        a{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+                                        }
+                                    }
+                                }
+
+                                .card2{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .card3{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .card3-5{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .card4{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .card5{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .card6{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .card7{
+                                    flex: 1 1 14rem; /* Se ajusta sin ser más pequeño de 18rem */
+                                    max-width: 100%; /* No se desborda */
+                                    margin-bottom: 20px;
+
+                                    img{
+                                        height: 40vh;
+                                        object-fit: cover;
+                                    }
+
+                                    .card-body{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        align-items: first baseline;
+                                        h5{
+                                            font-family: $letra-primaria;
+                                        }
+                                        p{
+                                            font-family:$letra-secundaria ;
+                                            span{
+                                                font-weight:bold;
+                                            }
+                                        }
+                                        .btn-primary{
+                                            background-color: #3a3a3a;
+                                            color: $white;
+                                            font-family: $letra-secundaria;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                background-color: #2c2c2c;
+                                                border-color: #2c2c2c;
+                                            }
+                                        }
+                                        .modal{
+                                            .modal-dialog{
+                                                .modal-content{
+                                                    .modal-header{
+                                                        border: none;
+                                                        font-family: $letra-primaria;
+                                                    }
+                                                    .modal-footer{
+                                                        border: none;
+                                                        button{
+                                                            background-color: #3a3a3a;
+                                                            color: $white;
+                                                            font-family: $letra-secundaria;
+                                                            border-color: #3a3a3a;
+
+                                                            &:focus{
+                                                                background-color: #2c2c2c;
+                                                                border-color: #2c2c2c;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
                             }
                         }
                     }
@@ -662,15 +1201,14 @@ html{
                                 }
                             }
                             .accordion-button.collapsed{
-                                background-color: $orange-200;
+                                background-color: $red-200;
                             }
                             .accordion-button:not(.collapsed) {
-                                background-color: $orange-200; 
+                                background-color: $red-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
                         }
                     }
@@ -694,9 +1232,8 @@ html{
                                 background-color: $purple-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
                         }
                     }
@@ -720,9 +1257,8 @@ html{
                                 background-color: $purple-200; 
                                 color: #3a3a3a;
                             }
-                            .accordion-button::after {
-                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-                                filter: invert(1);
+                            .accordion-button::after{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");                            
                             }
                         }
                     }
@@ -873,6 +1409,9 @@ html{
                             }
                         }
                     }
+                    .offcanvas-improvise{
+                        width: 95%;
+                    }
                     h2{
                         text-align: center;
                     }
@@ -888,6 +1427,25 @@ html{
                                     .accordion-body{
                                         .container{
                                             grid-template-columns: 1fr;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .accordion-4{
+                        .accordion-item{
+                            .accordion-collapse {
+                                .accordion-body{
+                                    .row{
+                                        grid-template-columns: 40% 60%;
+
+                                        .container-links{
+                                            .list-group{
+                                                font-size: smaller;
+                                                // padding: 5px;
+                                            }
                                         }
                                     }
                                 }
