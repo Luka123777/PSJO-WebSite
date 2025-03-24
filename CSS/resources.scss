@@ -633,10 +633,7 @@ html{
                         }
                         .accordion-collapse{
                             .accordion-body{
-                                .row{
-                                    display: grid;
-                                    grid-template-columns: repeat(2,1fr);
-                                    
+                                .row{                            
                                     .container-links{
                                         .list-group{
                                             position: relative;
@@ -650,12 +647,18 @@ html{
                                                 color: $black;
                                                 border-color: $black ;
                                             }
-                                            
+                                            a{
+                                                &:focus{
+                                                    background-color:  rgba(58, 58, 58, 0.25);
+                                                    border: none;
+                                                    border-bottom: none;
+                                                    border-top: none;
+                                                }
+                                            }
                                         }
                                     }
                                     .container-texts{
                                         .scrollspy-example{
-                                            position: relative;
                                             height: 400px; 
                                             overflow-y: auto; 
                                             scroll-behavior: smooth;
@@ -711,6 +714,7 @@ html{
                         }
                         .accordion-collapse{
                             .accordion-body{
+                                scroll-behavior: smooth;
                                 display: flex;
                                 flex-wrap: wrap;
                                 justify-content: center;
