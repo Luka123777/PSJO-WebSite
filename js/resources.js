@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function () {
     var buscador = document.getElementById("buscador");
     const articulos = document.querySelectorAll(".articulos1, .articulos2, .articulos3, .articulos4, .articulos5, .articulos6, .articulos7, .articulos8");
-
     const mensajeSinResultados = document.getElementById("mensaje-sin-resultados");
 
     function limpiarTexto(texto) {
@@ -81,14 +80,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function filtrarArticulos() {
-        const textoBusqueda = limpiarTexto(buscador.value);
+        const textoBusqueda = limpiarTexto(buscador.value); //Se recoje el texto del input
         let hayCoincidencias = false;
+        let contadorResultados = 0;
+        const limiteResultados = 8;
 
         articulos.forEach(function(item){
             const textoItem = limpiarTexto(item.textContent);
-            if (textoItem.includes(textoBusqueda) && textoBusqueda !== "") {
+
+            if (textoItem.includes(textoBusqueda) && textoBusqueda !== "" 
+                && contadorResultados <= limiteResultados) {
                 item.style.display = "";
                 hayCoincidencias = true;
+                contadorResultados++;
             } else {
                 item.style.display = "none";
             }

@@ -6031,7 +6031,7 @@ header .menu .navbarSty .navbar-menu .nav-item .nav-link:focus {
   color: rgb(84, 63, 63);
 }
 header .menu .navbarSty .navbar-menu .nav-item .dropdown-menu {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
 }
 header .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item {
   background-color: rgba(255, 255, 255, 0);
@@ -6319,7 +6319,18 @@ header .menu .icons i:hover {
     display: none !important;
   }
   .menu .navbarSty .navbar-menu .nav-item .dropdown-menu {
-    left: -7px !important;
+    left: -30px !important;
+    margin-right: 30px !important;
+  }
+  .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item {
+    height: 30px;
+    border-bottom: 1px solid #000;
+    padding: 0;
+    margin: 0;
+  }
+  .menu .navbarSty .navbar-menu .only-link {
+    border-bottom: 1px solid #000;
+    margin-right: 5px;
   }
   .menu .navbarSty {
     transform: translateY(0.1vh);

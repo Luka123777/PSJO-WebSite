@@ -99,7 +99,7 @@ header {
                     }
 
                     .dropdown-menu{
-                        background-color: rgba(255, 255, 255, 0.8); 
+                        background-color: rgba(255, 255, 255, 1); 
 
                         .dropdown-item{
                             background-color: rgba(255, 255, 255, 0) ;
@@ -255,7 +255,7 @@ header {
         right: 0;
         top: 10vh;
         width: 50%;
-        background-color: rgb(255, 255, 255, 0.7);
+        background-color: rgb(255, 255, 255, 1);
         display: none;
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 0.25rem;
@@ -274,7 +274,18 @@ header {
      }
 
      .menu .navbarSty .navbar-menu .nav-item .dropdown-menu{
-        left: -7px !important;
+        left: -30px !important;
+        margin-right: 30px !important;
+      }
+      .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item{
+        height: 30px;
+        border-bottom: 1px solid $black;
+        padding: 0;
+        margin: 0;
+      }
+      .menu .navbarSty .navbar-menu .only-link{
+        border-bottom: 1px solid $black;
+        margin-right: 5px;
       }
 
     .menu .navbarSty{

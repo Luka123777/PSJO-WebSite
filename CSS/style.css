@@ -59,7 +59,7 @@ header {
 }
 
 .menu .navbarSty .navbar-menu .nav-item .dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 1); 
 }
 
 .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item:hover{
@@ -181,21 +181,8 @@ html {
 
 .presentation-txt p {
     font-family: "Play", sans-serif;
-    font-size:  clamp(0.8rem, 3vw + 2rem, 1.5vw);
-    font-weight:600;
-}
-
-.presentation-credits {
-    font-family: "Play", sans-serif;
-    position: absolute;
-    bottom: 1vh;
-    right: 0.75vw;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    padding: 5px 10px;
-    font-size: 10px;
-    border-bottom-right-radius: 2vh;
-    height: 28px;
+    font-size:  clamp(1rem, 3vw + 2rem, 1.5vw);
+    font-weight:500;
 }
 
 /*Swipers*/
@@ -369,6 +356,7 @@ html {
     font-weight: 300;
     font-family: "Roboto Slab", serif;
     font-size: 3vh;
+    text-decoration: underline;
 }
 
 
@@ -499,7 +487,7 @@ html {
         right: 0;
         top: 10vh;
         width: 50%;
-        background-color: rgb(255, 255, 255, 0.7);
+        background-color: rgb(255, 255, 255, 1);
         display: none;
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 0.25rem;
@@ -520,7 +508,18 @@ html {
      }
 
      .menu .navbarSty .navbar-menu .nav-item .dropdown-menu{
-        left: -7px !important;
+        left: -30px !important;
+        margin-right: 30px !important;
+      }
+      .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item{
+        height: 30px;
+        border-bottom: 1px solid black;
+        padding: 0;
+        margin: 0;
+      }
+      .menu .navbarSty .navbar-menu .only-link{
+        border-bottom: 1px solid black;
+        margin-right: 5px;
       }
 
     .menu .navbarSty{

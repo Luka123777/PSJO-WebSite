@@ -32,7 +32,8 @@
 
             <nav id="navbar" class="navbarSty">
                 <ul class="navbar-menu">
-                    <li><a class="a-js-close" href="/pages/index.html">Inicio</a></li>
+        
+                    <li><a class="a-js-close only-link" href="/pages/index.html">Inicio</a></li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,8 +47,8 @@
                         </ul>
                     </li>
 
-                    <li><a class="a-js-close" href="/pages/index.html#horarios-content">Horarios</a></li>
-                    <li><a class="a-js-close" href="#">Eventos</a></li>
+                    <li><a class="a-js-close only-link" href="/pages/index.html#horarios-content">Horarios</a></li>
+                    <li><a class="a-js-close only-link" href="#">Eventos</a></li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,7 +93,6 @@
                 <button class="btn btn-primary" id="openOffcanvas1">
                     <span class="fs-4">Buscar</span> <i class="bi bi-search"></i>
                 </button>
-                
             </div>
             
             <div id="offcanvas" class="offcanvas-improvise">
@@ -101,89 +101,111 @@
                     <button class="btn-close" id="closeOffcanvas"></button>
                 </div>
                 <div class="offcanvas-improvise-body">
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
-                        <input type="search" class="form-control" id="buscador" name="buscador-general" placeholder="guia de misa" aria-label="search" aria-describedby="addon-wrapping">
+                    <div class="container-search">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
+                            <input type="search" class="form-control" id="buscador" name="buscador-general" placeholder="guia de misa" aria-label="search" aria-describedby="addon-wrapping">
+                        </div>
+                        <ul class="list-group">
+                            <!-- card1 -->
+                            <a class="list-group-item articulos1" href="#catequesis-ref">banana</a>
+                            <!-- card2 -->
+                            <a class="list-group-item articulos2" href="#feliz-ref">Cuando estés feliz <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#triste-ref">Cuando estés triste <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="/pages/test.html">test</a>
+                            <a class="list-group-item articulos2" href="#duelo-ref">Cuando estés en duelo <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#financiero-ref">Cuando estés con problemas financieros <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#animos-ref">Cuando no poseas ánimos <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#pensativo-ref">Cuando estés pensativo o confundido <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#miedo-ref">Cuando estés con miedo o estés asustado <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#paz-ref">Cuando necesitas paz <i class="bi bi-book"></i></a>
+                            <a class="list-group-item articulos2" href="#fortaleza-ref">Cuando requieras fortaleza <i class="bi bi-book"></i></a></li>
+                            <a class="list-group-item articulos2" href="#enfermo-ref">Cuando estés enfermo <i class="bi bi-book"></i></a></li>
+                            <a class="list-group-item articulos2" href="#ira-ref">Cuando estés con ira <i class="bi bi-book"></i></a>
+                            <!-- card3 -->
+                            <a class="list-group-item articulos3" href="#psychology-ref-depresion">Depresión - Tri-line <i class="bi bi-emoji-smile-upside-down"></i></a>
+                            <a class="list-group-item articulos3" href="#psychology-ref-miedo-humano">El mayor miedo del ser humano -Tri-line <i class="bi bi-emoji-smile-upside-down"></i></a>
+                            <a class="list-group-item articulos3" href="#psychology-ref-oscuridad-dinero">La oscuridad oculta del dinero <i class="bi bi-emoji-smile-upside-down"></i></a>
+                            <a class="list-group-item articulos3" href="#psychology-ref-vida-perfecta">El experimento de la vida perfecta <i class="bi bi-emoji-smile-upside-down"></i></a>
+                            <a class="list-group-item articulos3" href="#salud-ref-diabetes">Diabetes - La Hiperactina <i class="bi bi-heart"></i></a>
+                            <a class="list-group-item articulos3" href="#salud-ref-alcohol">¿De qué manera el alcohol nos embriaga? - Judy Grisel <i class="bi bi-heart"></i></a>
+                            <a class="list-group-item articulos3" href="#salud-ref-cancer">3 CLAVES para ENTENDER el CÁNCER <i class="bi bi-heart"></i></a>
+                            <a class="list-group-item articulos3" href="#salud-ref-colera">El Cólera enfermedad (by Global Health Media) <i class="bi bi-heart"></i></a>
+                            <a class="list-group-item articulos3" href="#religion-ref-Ignacio-loloya">Ignacio de Loyola y el impacto de los Jesuitas - Academia Play <i class="fa-solid fa-cross"></i></a>
+                            <a class="list-group-item articulos3" href="#religion-ref-principales-religiones">Las principales cinco religiones del mundo - John Bellaimey <i class="fa-solid fa-cross"></i></a>
+                            <a class="list-group-item articulos3" href="#religion-ref-religion-importancia">Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim <i class="fa-solid fa-cross"></i></a>
+                            <a class="list-group-item articulos3" href="#religion-ref-Dios-existe">¿Dios existe? <i class="fa-solid fa-cross"></i></a>
+                            <a class="list-group-item articulos3" href="#ciencia-ref-verdaderos-limites">Los VERDADEROS límites de la humanidad - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
+                            <a class="list-group-item articulos3" href="#ciencia-ref-carne-personas">¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
+                            <a class="list-group-item articulos3" href="#ciencia-ref-leche-veneno">Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
+                            <a class="list-group-item articulos3" href="#ciencia-ref-guerra-drogas">¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
+                            <!-- card4 -->
+                            <a class="list-group-item articulos4 PadrerNuestro-refS" href="#list-item-1">Oración de El Padre Nuestro <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 AveMaria-refS" href="#list-item-2">Oración Ave María <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 GloriaAlpadre-refS" href="#list-item-3">Oración Gloria al Padre <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 laSalve-refS" href="#list-item-4">Oración La Salve (Salve Regina) <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 AngelCustodio-refS" href="#list-item-5">Oración al Ángel Custodio <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 AngelGuarda-refS" href="#list-item-6">Oración al Ángel de la Guarda <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SagradaFamilia-refS" href="#list-item-7">Oración a la Sagrada Familia <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 Elcredo-refS" href="#list-item-8">Oración El Credo <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 CredoApostoles-refS" href="#list-item-9">Oración Credo de los Apóstoles <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 regina-refS" href="#list-item-10">Oración Regina Coeli <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 yoConfiezo-refS" href="#list-item-11">Oración Yo Confieso(Acto Penitencial) <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 actoContriccion-refS" href="#list-item-12">Oración Acto de Contrición <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 magnificat-refS" href="#list-item-13">Oración del Magnificat <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SenorMisericordia-refS" href="#list-item-14">Oración al Señor de la Misericordia <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 OracionManana-refS" href="#list-item-15">Oración de la mañana <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SanJose-refS" href="#list-item-16">Oración a San José <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 GraciaArrepentimiento-refS" href="#list-item-17">Oración de Petición de la gracia del arrepentimiento <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 JesusCrusificado-refS" href="#list-item-18">Oración a Jesús Crucificado <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 QuedateConmigo-refS" href="#list-item-19">Oración Quédate conmigo Señor <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 CoronillaDivinaMisericordia-refS" href="#list-item-20">Coronilla de la Divina Misericordia <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SanMiguelArcangel-refS" href="#list-item-21">Oración a San Miguel Arcángel<i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 Angelus-refS" href="#list-item-22">Oración del Ángelus <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 LlagaHombroJesus-refS" href="#list-item-23">Oración a la Llaga del hombro de Jesús <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 ConsagraciónVirgenMariaMaximiliano-refS" href="#list-item-24">Oración de consagración a la Virgen María(Maximiliano) <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SantaBirigida12anos-refS" href="#list-item-25">Oración de Santa Brígida de 12 años <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SantoRosario-refS" href="#list-item-26">Oración del Santo Rosario <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 SantaBirigida1anos-refS" href="#list-item-27">Oración de Santa Brígida de un año <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 sietedoloresVirgen-refS" href="#list-item-28">Devoción de los 7 Dolores de la Virgen <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 EspirituSanto-refS" href="#list-item-29">Oración al Espíritu Santo <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 DivinoNinoJesus-refS" href="#list-item-30">Oración al Divino Niño Jesús <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 AlmasPurgatorio-refS" href="#list-item-31">Oración por las Almas del Purgatorio <i class="fa-solid fa-church"></i></a>
+                            <a class="list-group-item articulos4 ConsagraciónVirgen-Maria-refS" href="#list-item-32">Oración de Consagración a la Virgen María <i class="fa-solid fa-church"></i></a>
+                            <!-- card5 -->
+                            <a class="list-group-item articulos5 GuiaMisa-refS" href="#CardGuiaMisa">Guía de misa <i class="fa-solid fa-book-bible"></i></a>
+                            <a class="list-group-item articulos5 RitosIniciales-refS" href="#CardCoroRitosIniciales">Ritos iniciales <i class="fa-solid fa-music"></i></a>
+                            <a class="list-group-item articulos5 Gloria-refS" href="#CardCorosGloria">Gloria <i class="fa-solid fa-music"></i></a>
+                            <a class="list-group-item articulos5 SalmoResponsorial-refS" href="#CardCorosSalmoResponsorial">Salmo responsorial <i class="fa-solid fa-music"></i></a>
+                            <a class="list-group-item articulos5 Ofertorio-refS" href="#CardCorosOfertorio">Ofertorio <i class="fa-solid fa-music"></i></a>
+                            <a class="list-group-item articulos5 Santo-refS" href="#CardCorosSanto">Santo <i class="fa-solid fa-music"></i></a>
+                            <a class="list-group-item articulos5 Comunion-refS" href="#CardCorosComunion">Comunión <i class="fa-solid fa-music"></i></a>
+                            <a class="list-group-item articulos5 CorosFinal-refS" href="#CardCorosFinal">Final <i class="fa-solid fa-music"></i></a>
+                            <!-- card6 -->
+    
+                            <!-- NO RESULTS -->
+                             <p id="mensaje-sin-resultados" class="list-group-item">Sin resultados...</p>
+                        </ul>
                     </div>
-                    <ul class="list-group">
-                        <!-- card1 -->
-                        <a class="list-group-item articulos1" href="#catequesis-ref">banana</a>
-                        <!-- card2 -->
-                        <a class="list-group-item articulos2" href="#feliz-ref">Cuando estés feliz <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#triste-ref">Cuando estés triste <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="/pages/test.html">test</a>
-                        <a class="list-group-item articulos2" href="#duelo-ref">Cuando estés en duelo <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#financiero-ref">Cuando estés con problemas financieros <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#animos-ref">Cuando no poseas ánimos <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#pensativo-ref">Cuando estés pensativo o confundido <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#miedo-ref">Cuando estés con miedo o estés asustado <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#paz-ref">Cuando necesitas paz <i class="bi bi-book"></i></a>
-                        <a class="list-group-item articulos2" href="#fortaleza-ref">Cuando requieras fortaleza <i class="bi bi-book"></i></a></li>
-                        <a class="list-group-item articulos2" href="#enfermo-ref">Cuando estés enfermo <i class="bi bi-book"></i></a></li>
-                        <a class="list-group-item articulos2" href="#ira-ref">Cuando estés con ira <i class="bi bi-book"></i></a>
-                        <!-- card3 -->
-                        <a class="list-group-item articulos3" href="#psychology-ref-depresion">Depresión - Tri-line <i class="bi bi-emoji-smile-upside-down"></i></a>
-                        <a class="list-group-item articulos3" href="#psychology-ref-miedo-humano">El mayor miedo del ser humano -Tri-line <i class="bi bi-emoji-smile-upside-down"></i></a>
-                        <a class="list-group-item articulos3" href="#psychology-ref-oscuridad-dinero">La oscuridad oculta del dinero <i class="bi bi-emoji-smile-upside-down"></i></a>
-                        <a class="list-group-item articulos3" href="#psychology-ref-vida-perfecta">El experimento de la vida perfecta <i class="bi bi-emoji-smile-upside-down"></i></a>
-                        <a class="list-group-item articulos3" href="#salud-ref-diabetes">Diabetes - La Hiperactina <i class="bi bi-heart"></i></a>
-                        <a class="list-group-item articulos3" href="#salud-ref-alcohol">¿De qué manera el alcohol nos embriaga? - Judy Grisel <i class="bi bi-heart"></i></a>
-                        <a class="list-group-item articulos3" href="#salud-ref-cancer">3 CLAVES para ENTENDER el CÁNCER <i class="bi bi-heart"></i></a>
-                        <a class="list-group-item articulos3" href="#salud-ref-colera">El Cólera enfermedad (by Global Health Media) <i class="bi bi-heart"></i></a>
-                        <a class="list-group-item articulos3" href="#religion-ref-Ignacio-loloya">Ignacio de Loyola y el impacto de los Jesuitas - Academia Play <i class="fa-solid fa-cross"></i></a>
-                        <a class="list-group-item articulos3" href="#religion-ref-principales-religiones">Las principales cinco religiones del mundo - John Bellaimey <i class="fa-solid fa-cross"></i></a>
-                        <a class="list-group-item articulos3" href="#religion-ref-religion-importancia">Por Qué la Religión Es Tan Importante Para Una Sociedad - Émile Durkheim <i class="fa-solid fa-cross"></i></a>
-                        <a class="list-group-item articulos3" href="#religion-ref-Dios-existe">¿Dios existe? <i class="fa-solid fa-cross"></i></a>
-                        <a class="list-group-item articulos3" href="#ciencia-ref-verdaderos-limites">Los VERDADEROS límites de la humanidad - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
-                        <a class="list-group-item articulos3" href="#ciencia-ref-carne-personas">¿Es mala la carne para las personas? ¿Es poco saludable? - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
-                        <a class="list-group-item articulos3" href="#ciencia-ref-leche-veneno">Leche: ¿veneno blanco o bebida saludable? - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
-                        <a class="list-group-item articulos3" href="#ciencia-ref-guerra-drogas">¿Por qué la guerra contra las drogas es un enorme fracaso? - Kurzgesagt <i class="fa-solid fa-atom"></i></a>
-                        <!-- card4 -->
-                        <a class="list-group-item articulos4 PadrerNuestro-refS" href="#list-item-1">Oración de El Padre Nuestro <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 AveMaria-refS" href="#list-item-2">Oración Ave María <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 GloriaAlpadre-refS" href="#list-item-3">Oración Gloria al Padre <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 laSalve-refS" href="#list-item-4">Oración La Salve (Salve Regina) <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 AngelCustodio-refS" href="#list-item-5">Oración al Ángel Custodio <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 AngelGuarda-refS" href="#list-item-6">Oración al Ángel de la Guarda <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SagradaFamilia-refS" href="#list-item-7">Oración a la Sagrada Familia <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 Elcredo-refS" href="#list-item-8">Oración El Credo <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 CredoApostoles-refS" href="#list-item-9">Oración Credo de los Apóstoles <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 regina-refS" href="#list-item-10">Oración Regina Coeli <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 yoConfiezo-refS" href="#list-item-11">Oración Yo Confieso(Acto Penitencial) <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 actoContriccion-refS" href="#list-item-12">Oración Acto de Contrición <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 magnificat-refS" href="#list-item-13">Oración del Magnificat <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SenorMisericordia-refS" href="#list-item-14">Oración al Señor de la Misericordia <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 OracionManana-refS" href="#list-item-15">Oración de la mañana <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SanJose-refS" href="#list-item-16">Oración a San José <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 GraciaArrepentimiento-refS" href="#list-item-17">Oración de Petición de la gracia del arrepentimiento <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 JesusCrusificado-refS" href="#list-item-18">Oración a Jesús Crucificado <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 QuedateConmigo-refS" href="#list-item-19">Oración Quédate conmigo Señor <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 CoronillaDivinaMisericordia-refS" href="#list-item-20">Coronilla de la Divina Misericordia <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SanMiguelArcangel-refS" href="#list-item-21">Oración a San Miguel Arcángel<i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 Angelus-refS" href="#list-item-22">Oración del Ángelus <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 LlagaHombroJesus-refS" href="#list-item-23">Oración a la Llaga del hombro de Jesús <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 ConsagraciónVirgenMariaMaximiliano-refS" href="#list-item-24">Oración de consagración a la Virgen María(Maximiliano) <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SantaBirigida12anos-refS" href="#list-item-25">Oración de Santa Brígida de 12 años <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SantoRosario-refS" href="#list-item-26">Oración del Santo Rosario <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 SantaBirigida1anos-refS" href="#list-item-27">Oración de Santa Brígida de un año <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 sietedoloresVirgen-refS" href="#list-item-28">Devoción de los 7 Dolores de la Virgen <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 EspirituSanto-refS" href="#list-item-29">Oración al Espíritu Santo <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 DivinoNinoJesus-refS" href="#list-item-30">Oración al Divino Niño Jesús <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 AlmasPurgatorio-refS" href="#list-item-31">Oración por las Almas del Purgatorio <i class="fa-solid fa-church"></i></a>
-                        <a class="list-group-item articulos4 ConsagraciónVirgen-Maria-refS" href="#list-item-32">Oración de Consagración a la Virgen María <i class="fa-solid fa-church"></i></a>
-                        <!-- card5 -->
-                        <a class="list-group-item articulos5 GuiaMisa-refS" href="#CardGuiaMisa">Guía de misa <i class="fa-solid fa-book-bible"></i></a>
-                        <a class="list-group-item articulos5 RitosIniciales-refS" href="#CardCoroRitosIniciales">Ritos iniciales <i class="fa-solid fa-music"></i></a>
-                        <a class="list-group-item articulos5 Gloria-refS" href="#CardCorosGloria">Gloria <i class="fa-solid fa-music"></i></a>
-                        <a class="list-group-item articulos5 SalmoResponsorial-refS" href="#CardCorosSalmoResponsorial">Salmo responsorial <i class="fa-solid fa-music"></i></a>
-                        <a class="list-group-item articulos5 Ofertorio-refS" href="#CardCorosOfertorio">Ofertorio <i class="fa-solid fa-music"></i></a>
-                        <a class="list-group-item articulos5 Santo-refS" href="#CardCorosSanto">Santo <i class="fa-solid fa-music"></i></a>
-                        <a class="list-group-item articulos5 Comunion-refS" href="#CardCorosComunion">Comunión <i class="fa-solid fa-music"></i></a>
-                        <a class="list-group-item articulos5 CorosFinal-refS" href="#CardCorosFinal">Final <i class="fa-solid fa-music"></i></a>
-
-
-                        <p id="mensaje-sin-resultados" class="list-group-item">Sin resultados...</p>
-                    </ul>
+                    
+                    <div class="index-search ">
+                        <hr>
+                        <div class="container-list-group">
+                            <ul class="list-group ">
+                                <li class="list-group-item">Ciencia <i class="fa-solid fa-atom"></i></li>
+                                <li class="list-group-item">Religion <i class="fa-solid fa-cross"></i></li>
+                                <li class="list-group-item">Psicología <i class="bi bi-emoji-smile-upside-down"></i></li>
+                                <li class="list-group-item">Salud <i class="bi bi-heart"></i></li>
+                            </ul>
+                            <ul class="list-group">
+                                <li class="list-group-item">Lecturas para ti <i class="bi bi-book"></i></li>
+                                <li class="list-group-item">Rezos y Oraciones <i class="fa-solid fa-church"></i></li>
+                                <li class="list-group-item">Guia de misa <i class="fa-solid fa-book-bible"></i></li>
+                                <li class="list-group-item">Guia de misa</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
             </div> 
         </div>

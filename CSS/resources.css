@@ -17991,7 +17991,7 @@ html body header .menu .navbarSty .navbar-menu .nav-item .nav-link:focus {
   color: rgb(84, 63, 63);
 }
 html body header .menu .navbarSty .navbar-menu .nav-item .dropdown-menu {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
 }
 html body header .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item {
   background-color: rgba(255, 255, 255, 0);
@@ -18086,13 +18086,40 @@ html body .content .presentation .offcanvas-improvise .offcanvas-improvise-heade
   box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
 }
 html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body {
-  width: 90%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .input-group input:focus {
+html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .container-search .input-group {
+  width: 95%;
+  margin: 0 auto;
+}
+html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .container-search .input-group input {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   border-color: #3a3a3a;
+}
+html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .container-search .input-group span {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  border-color: #3a3a3a;
+}
+html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .index-search {
+  display: flex;
+  flex-direction: column;
+}
+html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .index-search .container-list-group {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 40px;
+}
+html body .content .presentation .offcanvas-improvise .offcanvas-improvise-body .index-search .container-list-group ul li {
+  font-size: small;
 }
 html body .content .presentation .offcanvas-improvise.open {
   left: 0;
@@ -18455,6 +18482,7 @@ html body .content .accordion-container .accordion-5 .accordion-item .accordion-
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
 }
 html body .content .accordion-container .accordion-5 .accordion-item .accordion-collapse .accordion-body {
+  scroll-behavior: smooth;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18992,7 +19020,7 @@ html body .content .footer .p-copyright {
     right: 0;
     top: 10vh;
     width: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgb(255, 255, 255);
     display: none;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
@@ -19007,7 +19035,18 @@ html body .content .footer .p-copyright {
     display: none !important;
   }
   .menu .navbarSty .navbar-menu .nav-item .dropdown-menu {
-    left: -7px !important;
+    left: -30px !important;
+    margin-right: 30px !important;
+  }
+  .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item {
+    height: 30px;
+    border-bottom: 1px solid #000;
+    padding: 0;
+    margin: 0;
+  }
+  .menu .navbarSty .navbar-menu .only-link {
+    border-bottom: 1px solid #000;
+    margin-right: 5px;
   }
   .menu .navbarSty {
     transform: translateY(0.1vh);
