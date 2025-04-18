@@ -132,129 +132,27 @@ html{
         }
         //Termina el header
         //Empieza el contenido
+        
         .content{
-            display: flex;
-            flex-direction: column;
-            max-width: 100%;
-            margin-top: 14vh;
+            margin: 0 auto;
+            width: 50%;
 
-            .NewEventContent{
-                width: 90%;
-                margin: 0 auto;
-                border: 1px solid black;
-                padding: 10px;
-            }
-            .cardEvent1{
-                width: 90%;
-                margin: 0 auto;
-                border: 1px solid black;
-                padding: 10px;
-                background-image: url(/images/Events/example.webp);
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: cover;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                height: 300px;
-
-                .tituloCard{
-                    text-align: initial;
-                    font-family: $letra-primaria;
-                    font-size: 35px;
-                    font-weight: 700;
-                    color: brown;
-                    padding-left: 5%;
-                    border-bottom: 1px solid black;
-                    width: 50%;
-                }
-                .descriptionCard{
-                    text-align: left;
-                    font-family: $letra-secundaria;
-                    font-weight: 500;
-                    color: brown;
-                    width: 50%;
-                    padding-left: 5%;
-                }
-                .dateCard{
-                    text-align: initial;
-                    font-family: $letra-secundaria;
-                    font-size: larger;
-                    font-weight: 700;
-                    padding-left: 5%;
-                    color: brown;
-                }
-            }
-            .test-container{
-                .test-creations{
-                    .prueba{
-                        background-color: $blue-300;
-                        color: red;
+            .card{
+                .row{
+                    .col-md-4{
+                        display: flex;
+                        align-items: center;
+                    }
+                    .col-md-8{
+                        .card-body{
+                            .dateCard{
+                                display: flex;
+                                justify-content: end;
+                            }
+                        }
                     }
                 }
             }
         }
-    }
-}
-
-@media(max-width:991px){
-    /*Empieza el header*/
-    .menu label {
-        display: initial !important;
-    }
-    .menu .navbarSty{
-        position: absolute;
-        right: 0;
-        top: 10vh;
-        width: 50%;
-        background-color: rgb(255, 255, 255, 1);
-        display: none;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        border-radius: 0.25rem;
-     }
-
-     .menu .navbarSty .navbar-menu li a:hover {
-        background-color: rgb(0, 0, 0, 0.05);
-    }
-
-     .menu #navbar ul li{
-        width: 100%;
-     }
-
-     .icons{
-        display: none !important;
-     }
-
-     .menu .navbarSty .navbar-menu .nav-item .dropdown-menu{
-        left: -30px !important;
-        margin-right: 30px !important;
-      }
-      .menu .navbarSty .navbar-menu .nav-item .dropdown-menu .dropdown-item{
-        height: 30px;
-        border-bottom: 1px solid $black;
-        padding: 0;
-        margin: 0;
-      }
-      .menu .navbarSty .navbar-menu .only-link{
-        border-bottom: 1px solid $black;
-        margin-right: 5px;
-      }
-
-    .menu .navbarSty{
-        transform: translateY(0.1vh) ;
-      }
-
-     .navbarSty ul li a{
-        font-size: 1.5vh !important ;
-     }
-     //Empieza el content
-     
-
-}
-
-@media(width:1024px){
-    .logo{
-        width: 150px;
-        height: 62px;
     }
 }

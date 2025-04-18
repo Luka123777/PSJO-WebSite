@@ -17916,6 +17916,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html body {
+  background-image: url(/images/Events/bg-events-_1_.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 html body header {
   background-image: url("/images/index/header-bg.jpg");
   background-position: center center;
@@ -18014,56 +18021,326 @@ html body header .menu .icons i:hover {
   color: rgb(84, 63, 63);
 }
 html body .content {
-  display: flex;
-  flex-direction: column;
   max-width: 100%;
   margin-top: 14vh;
 }
-html body .content .NewEventContent {
-  width: 90%;
-  margin: 0 auto;
-  border: 1px solid black;
-  padding: 10px;
-}
-html body .content .cardEvent1 {
-  width: 90%;
-  margin: 0 auto;
-  border: 1px solid black;
-  padding: 10px;
-  background-image: url(/images/Events/example.webp);
-  background-repeat: no-repeat;
+html body .content .presentation-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url(/images/index/header-bg.jpg);
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+html body .content .presentation-container h3, html body .content .presentation-container .h3 {
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+html body .content .presentation-container p {
+  font-family: "Play", sans-serif;
+  text-align: center;
+}
+html body .content .presentation-container button {
+  display: none;
+}
+html body .content .offcanvas-improvise {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out;
+  z-index: 5;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-header h5, html body .content .offcanvas-improvise .offcanvas-improvise-header .h5 {
+  font-family: "Roboto Slab", serif;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-header button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 300px;
+  padding-right: 20px;
 }
-html body .content .cardEvent1 .tituloCard {
-  text-align: initial;
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .modal-group {
+  z-index: 6;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons-group {
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  font-family: "Play", sans-serif;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons-group button {
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons-group button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group {
+  font-family: "Play", sans-serif;
+  margin-bottom: 20px;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group .list-group li strong a {
+  color: #000;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group .list-group .createbutton {
+  background-color: #a6e9d5;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group .list-group .searchbutton {
+  background-color: #9ec5fe;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group .list-group .deletebutton {
+  background-color: #f1aeb5;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group .list-group .requestbutton {
+  background-color: #c5b3e6;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-facebook {
+  background-color: #3b5998;
+  color: white;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-contacto {
+  background-color: #6c63ff;
+  color: white;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-facebook:hover,
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-whatsapp:hover,
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-contacto:hover {
+  opacity: 0.85;
+}
+html body .content .offcanvas-improvise.open {
+  left: 0;
+}
+html body .content .eventsContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  gap: 20px;
+  background-color: #fff;
+}
+html body .content .eventsContainer .eventsCreator {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+html body .content .eventsContainer .eventsCreator .buttons-group {
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  font-family: "Play", sans-serif;
+}
+html body .content .eventsContainer .eventsCreator .buttons-group button {
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+html body .content .eventsContainer .eventsCreator .buttons-group button a {
+  color: #fff;
+  text-decoration: none;
+}
+html body .content .eventsContainer .eventsCreator .buttons-group button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .eventsContainer .eventsCreator .textGuide-group {
+  font-family: "Play", sans-serif;
+  margin-bottom: 20px;
+}
+html body .content .eventsContainer .eventsCreator .textGuide-group .list-group li strong a {
+  color: #000;
+}
+html body .content .eventsContainer .eventsCreator .textGuide-group .list-group .createbutton {
+  background-color: #a6e9d5;
+}
+html body .content .eventsContainer .eventsCreator .textGuide-group .list-group .searchbutton {
+  background-color: #9ec5fe;
+}
+html body .content .eventsContainer .eventsCreator .textGuide-group .list-group .deletebutton {
+  background-color: #f1aeb5;
+}
+html body .content .eventsContainer .eventsCreator .textGuide-group .list-group .requestbutton {
+  background-color: #c5b3e6;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-facebook {
+  background-color: #3b5998;
+  color: white;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-contacto {
+  background-color: #6c63ff;
+  color: white;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-facebook:hover,
+html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-whatsapp:hover,
+html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-contacto:hover {
+  opacity: 0.85;
+}
+html body .content .eventsContainer .eventosCreados {
+  display: flex;
+  flex-direction: column;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 20px;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .text-content {
+  flex: 7;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .text-content .tituloCard {
+  text-align: center;
   font-family: "Roboto Slab", serif;
-  font-size: 35px;
-  font-weight: 700;
-  color: brown;
-  padding-left: 5%;
-  border-bottom: 1px solid black;
-  width: 50%;
 }
-html body .content .cardEvent1 .descriptionCard {
-  text-align: left;
+html body .content .eventsContainer .eventosCreados .cardEvent .text-content .descriptionCard {
+  text-align: center;
   font-family: "Play", sans-serif;
-  font-weight: 500;
-  color: brown;
-  width: 50%;
-  padding-left: 5%;
 }
-html body .content .cardEvent1 .dateCard {
-  text-align: initial;
+html body .content .eventsContainer .eventosCreados .cardEvent .text-content .dateCard {
+  display: flex;
   font-family: "Play", sans-serif;
-  font-size: larger;
-  font-weight: 700;
-  padding-left: 5%;
-  color: brown;
+  justify-content: end;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .img-content {
+  flex: 3;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .img-content img {
+  height: 100%;
+  width: 250px;
+  max-width: 100%;
+}
+html body .content .pagination {
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #fff;
+}
+html body .content .pagination span {
+  font-family: "Play", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+html body .content .pagination button {
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+  height: auto;
+  width: auto;
+  font-size: 15px;
+}
+html body .content .pagination button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+  border: #3a3a3a;
+}
+html body .content .pagination button:active {
+  background-color: #ffffff;
+  color: #3a3a3a;
+}
+html body .content .footer {
+  background-color: #3a3a3a;
+  color: white;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+html body .content .footer .column {
+  flex: 1;
+  padding: 10px;
+}
+html body .content .footer .column h3, html body .content .footer .column .h3 {
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 1vh;
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+}
+html body .content .footer .column a {
+  display: block;
+  /* margin-bottom: 5px; */
+  font-family: "Play", sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin: 1.5vh 0;
+}
+html body .content .footer .column a:hover {
+  text-decoration: underline;
+}
+html body .content .footer p {
+  text-align: center;
+  min-width: 100%;
+  margin: -2px;
+  font-size: smaller;
+}
+html body .content .footer .p-copyright {
+  border-top: 1px solid white;
 }
 
 @media (max-width: 991px) {
@@ -18109,6 +18386,51 @@ html body .content .cardEvent1 .dateCard {
   }
   .navbarSty ul li a {
     font-size: 1.5vh !important;
+  }
+  html body .content .offcanvas-improvise {
+    width: 95%;
+  }
+  html body .content .presentation-container button {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    font-family: "Play", sans-serif;
+    background-color: #3a3a3a;
+    border-color: #3a3a3a;
+  }
+  html body .content .presentation-container button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+    border: #3a3a3a;
+  }
+  html body .content .presentation-container button:active {
+    background-color: #ffffff;
+    color: #3a3a3a;
+  }
+  html body .content .eventsContainer {
+    grid-template-columns: 100%;
+  }
+  html body .content .eventsContainer .eventsCreator {
+    display: none;
+  }
+  html body .content .eventsContainer .eventosCreados {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  html body .content .eventsContainer .eventosCreados .cardEvent {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+  html body .content .eventsContainer .eventosCreados .cardEvent .img-content img {
+    width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  html body .content .pagination {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media (width: 1024px) {

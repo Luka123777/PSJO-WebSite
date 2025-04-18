@@ -70,29 +70,181 @@
 
         </div>
     </header>
-    <div class="content">
-        <div class="NewEventContent">
-            <h2>Crear Evento</h2>
-            <input type="text" id="event-title" class="form-control mb-2" placeholder="Título del evento">
-            <textarea  id="event-description" class="form-control mb-2" placeholder="Descripción del evento"></textarea>
-            <input id="event-date" type="date" class="form-control mb-2">
-            <input id="event-image" type="file" class="form-control mb-2" accept="image/*">
-            <button class="btn btn-success" onclick="createEvent()" >Guardar Evento</button>
-        </div>
-        <div class="mt-4" id="events-container">
 
+    <div class="content">
+        <div class="presentation-container rounded">
+            <h3> ¡Bienvenido a nuestra sección de eventos! </h3>
+            <p>Consulte aquí los próximos eventos organizados por nuestra parroquia. Actividades, celebraciones y encuentros pensados para toda la comunidad. Lo invitamos a participar y mantenerse informado.</p>
+            <button id="openOffcanvasEvents" type="button" class="btn btn-primary createButton" data-bs-toggle="modal" data-bs-target="#">
+                <i class="bi bi-tools"></i> Opciones 
+            </button>
         </div>
-        <div  class="cardEvent1">
-            <h3 class="tituloCard">    
-                Evento
-            </h3>
-            <p class="descriptionCard">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur at placeat quasi minus dolores, nulla ea nihil possimus. Voluptatibus architecto quisquam voluptate assumenda cumque, dolorum nemo minima vel ducimus rerum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit accusamus illum laudantium, dolore cum ab odio exercitationem explicabo suscipit praesentium, repellendus sed illo debitis dicta, minus eum numquam quam vero.
-            </p>
-            <p class="dateCard">
-                15/03/25
-            </p>
+
+        <div id="offcanvas" class="offcanvas-improvise">
+            <div class="offcanvas-improvise-header border-bottom">
+                <h5>¿Qué opciones necesitas?</h5>
+                <button class="btn-close" id="closeOffcanvas"></button>
+            </div>
+            <div class="offcanvas-improvise-body">
+                <div class="eventsCreator">     
+                    <div class="buttons-group">
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#createModal">
+                            <i class="bi bi-magic"></i> Crear 
+                        </button>
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                            <i class="bi bi-search"></i> Buscar 
+                        </button>
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                            <i class="bi bi-trash"></i> Borrar 
+                        </button>
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                            <i class="bi bi-box-arrow-up-right"></i> Solicitar
+                        </button>
+                    </div>
+    
+                    <div class="textGuide-group">
+                        <ul class="list-group">
+                            <li class="list-group-item createbutton"><strong>Crear:</strong> Crea un evento futuro para la iglesia(Solo para administradores) <i class="bi bi-magic"></i></li>
+                            <li class="list-group-item searchbutton"><strong>Buscar:</strong> Busca un evento pasado o actual. <i class="bi bi-search"></i></li>
+                            <li class="list-group-item deletebutton"><strong>Borrar:</strong> Borra un evento(solo para administradores) <i class="bi bi-trash"></i> </li>
+                            <li class="list-group-item requestbutton"><strong>Solicitar:</strong> ¡Solicita un evento a nuestros administradores de la parroquia <strong><a href="/pages/contact.html">contactándonos</a></strong>! <i class="bi bi-box-arrow-up-right"></i> </li>
+                          </ul>
+                    </div>
+                    <div class="buttons2Group">
+                        <div >
+                            <a href="https://www.facebook.com/" target="_blank" class="btn btn-facebook w-100">
+                              <i class="bi bi-facebook"></i> Facebook
+                            </a>
+                          </div>
+                    
+                          <div >
+                            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp w-100">
+                              <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
+                          </div>
+                    
+                          <div >
+                            <a href="/contacto" class="btn btn-contacto w-100">
+                              <i class="bi bi-envelope-fill"></i> Contacto
+                            </a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="eventsContainer rounded">
+            <div class="eventsCreator">     
+                
+
+                <div class="buttons-group">
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#createModal">
+                        <i class="bi bi-magic"></i> Crear 
+                    </button>
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                        <i class="bi bi-search"></i> Buscar 
+                    </button>
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                        <i class="bi bi-trash"></i> Borrar 
+                    </button>
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                        <a href="/pages/contact.html">
+                        <i class="bi bi-box-arrow-up-right"></i> Solicitar
+                        </a>
+                    </button>
+                </div>
+
+                <div class="textGuide-group">
+                    <ul class="list-group">
+                        <li class="list-group-item createbutton"><strong>Crear:</strong> Crea un evento futuro para la iglesia(Solo para administradores) <i class="bi bi-magic"></i></li>
+                        <li class="list-group-item searchbutton"><strong>Buscar:</strong> Busca un evento pasado o actual. <i class="bi bi-search"></i></li>
+                        <li class="list-group-item deletebutton"><strong>Borrar:</strong> Borra un evento(solo para administradores) <i class="bi bi-trash"></i> </li>
+                        <li class="list-group-item requestbutton"><strong>Solicitar:</strong> ¡Solicita un evento a nuestros administradores de la parroquia <strong><a href="/pages/contact.html">contactándonos</a></strong>! <i class="bi bi-box-arrow-up-right"></i> </li>
+                      </ul>
+                </div>
+                <div class="buttons2Group">
+                    <div >
+                        <a href="https://www.facebook.com/" target="_blank" class="btn btn-facebook w-100">
+                          <i class="bi bi-facebook"></i> Facebook
+                        </a>
+                      </div>
+                
+                      <div >
+                        <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp w-100">
+                          <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
+                      </div>
+                
+                </div>
+            </div>
+
+            <div class="eventosCreados" id="eventosCreados">
+               
+            </div>
+        </div>
+        <div class="pagination rounded">
+            <button class="btn btn-primary" id="prevBtn">Anterior</button>
+            <span id="page-indicator">Página 1</span>
+            <button class="btn btn-primary" id="nextBtn">Siguiente</button>
+        </div>
+        <footer class="footer" id="footer">
+            <div class="column">
+                <h3>Enlaces Rápidos</h3>
+                <a href="/pages/index.html#horarios-content">
+                    Horarios</a>
+                <a href="#Eventos">Eventos</a>
+                <a href="#Recursos">Recursos</a>
+                <a href="/pages/contact.html">Contacto</a>
+            </div>
+            <div class="column">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/parroquia.sanjoseobrero.71" target="_blank">Facebook
+                    <i class="fab fa-facebook" ></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=%2B595993583700&context=ARDOexM8Iqppxq6_ju-o6B3JviaMtVs2XJ3ke8npVuI1tpFJeN9AqKXdo2kRaowPbdyyH5RH1DAG9Q6TSwK6zpzaRY4PsvSQUvIsIcYzgbJZN9XLeIoD5hfX8p3ElaoXbMe3RDc50A3k2LLW9qC2ExlX8g&source=FB_Page&app=facebook&entry_point=page_cta" target="_blank">Whatsapp
+                    <i class="fab fa-whatsapp" ></i>
+                </a>
+                <h3 class="h3-ubicacion">Ubicación</h3>
+                <a target="_blank" href="https://www.google.es/maps/place/Parroquia+San+Jos%C3%A9+Obrero/@-25.5329529,-54.6146811,18.06z/data=!4m14!1m7!3m6!1s0x94f68fe0a92640e5:0x74bedb9c2f2c2ef5!2sParroquia+San+Jos%C3%A9+Obrero!8m2!3d-25.5324946!4d-54.6145506!16s%2Fg%2F11cffj4pn!3m5!1s0x94f68fe0a92640e5:0x74bedb9c2f2c2ef5!8m2!3d-25.5324946!4d-54.6145506!16s%2Fg%2F11cffj4pn?hl=es&entry=ttu">
+                    Calle Trifón Benitéz, Bernardino Caballero, 100147 Ciudad del Este, Alto Paraná
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+            <div class="column">
+                <h3>Contacto</h3>
+                Teléfono: +595 993 583700
+                <br>
+                Email: psanjoseobrerocde@gmail.com
+                
+            </div>
+            <p class="p-copyright">&copy; 2024 Parroquia San José Obrero. Todos los derechos reservados. </p>
+            <p>Prohibida la reproducción total o parcial del contenido de esta web sin el consentimiento expreso del autor del mismo.</p>
+        </footer>
+        <!-- Se coloca el modal por el problema del responsive -->
+        <div class="modal-group">
+            <div class="modal fade" tabindex="-1" id="createModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="NewEventContent">
+                                <h2>Crear Evento</h2>
+                                <input type="text" id="" class="form-control mb-2" placeholder="Título del evento">
+                                <textarea  id="" class="form-control mb-2" placeholder="Descripción del evento"></textarea>
+                                <input id="" type="date" class="form-control mb-2">
+                                <input id="" type="file" class="form-control mb-2" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,5 +253,6 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="/js/script.js" ></script>
+    <script src="/js/events.js"></script>
 </body>
 </html>

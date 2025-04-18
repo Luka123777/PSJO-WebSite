@@ -7,10 +7,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "firebase": "^11.5.0",
+    "mysql2": "^3.14.0",
     "nodemailer": "^6.9.15",
-    "path": "^0.12.7",
-    "videojs-youtube": "^3.0.1"
+    "path": "^0.12.7"
   },
   "name": "parroquia-sjo",
   "version": "1.0.0",
@@ -20,7 +19,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Luka213",
   "license": "ISC",
-  "description": ""
+  "description": "PSJO's website"
 }

@@ -1,4 +1,3 @@
-
 //Ocultar el header al desplazar el scroll de la pagina hacia abajo.
 //Aparecer el header antes de llegar al inicio de la pagina.
 let lastScrollY = window.scrollY;
@@ -78,4 +77,3 @@ GalleryImage.forEach(img =>{ //por que no se pone()?
         fulImgBox.style.display = "none";
     });
 })
-
