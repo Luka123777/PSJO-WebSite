@@ -194,6 +194,7 @@ html{
                         &:focus{
                             box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
                         }
+                        
                     }
                 }
                 .offcanvas-improvise-body{                    
@@ -231,6 +232,10 @@ html{
     
                                 &:focus{
                                     box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                }
+                                &:hover{
+                                    background-color:  rgb(74, 74, 74);
+                                    border-color:  rgb(74, 74, 74) ;
                                 }
                             }
                         }
@@ -330,6 +335,11 @@ html{
                             &:focus{
                                 box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
                             }
+
+                            &:hover{
+                                background-color:  rgb(74, 74, 74);
+                                border-color:  rgb(74, 74, 74) ;
+                             }
                         }
                     }
                     .textGuide-group{
@@ -420,17 +430,54 @@ html{
                             }
                             .dateCard{
                                 display: flex;
+                                flex-direction: column;
                                 font-family: $letra-secundaria;
-                                justify-content: end;
+                                justify-content: center;
+                                gap: 10px;
+                                text-align: center;
+
+                                .event-ended{
+                                    display: none;
+                                    border: 1px solid black;
+                                    width: auto;
+                                    padding: 5px;
+                                    color: $white;
+                                    background-color: $black;
+
+                                }
                             }
                         }
                         .img-content{
-                            flex: 3;
+                                position: relative;
+                                flex: 3;
 
                             img{
                                 height: 100%;
-                                width: 250px;
+                                width: 100%;
                                 max-width: 100%;
+                                object-fit: cover;
+                            }
+                            button{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                margin: 2px;
+                                font-family: $letra-secundaria;
+                                background-color: #3a3a3a;
+                                border-color: #3a3a3a;
+
+                                a{
+                                    color: $white;
+                                    text-decoration: none;
+                                }
+
+                                &:focus{
+                                    box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                }
+                                &:hover{
+                                   background-color:  rgb(74, 74, 74);
+                                   border-color:  rgb(74, 74, 74) ;
+                                }
                             }
                         }
                     }
@@ -469,6 +516,10 @@ html{
                         background-color: #ffffff;
                         color: #3a3a3a;
                     }
+                    &:hover{
+                        background-color:  rgb(74, 74, 74);
+                        border-color:  rgb(74, 74, 74) ;
+                     }
                 }
                 
             }

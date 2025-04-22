@@ -6139,8 +6139,8 @@ header .menu .icons i:hover {
   width: 125px;
 }
 .content .grid-content .section-grid3 form .col-12 input:hover {
-  background-color: #2c2c2c;
-  border-color: #2c2c2c;
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
 }
 .content .grid-content .section-grid3 form .col-12 input:focus {
   box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);

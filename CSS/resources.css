@@ -18059,6 +18059,10 @@ html body .content .presentation .search-buttom button:focus {
 html body .content .presentation .search-buttom button span {
   font-family: "Play", sans-serif;
 }
+html body .content .presentation .search-buttom button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
 html body .content .presentation .offcanvas-improvise {
   position: fixed;
   top: 0;
@@ -18968,6 +18972,10 @@ html body .content .Final-Search .button-container button {
   height: 50px;
   width: 10vh;
 }
+html body .content .Final-Search .button-container button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
 html body .content .footer {
   background-color: #3a3a3a;
   color: white;
@@ -19070,6 +19078,10 @@ html body .content .footer .p-copyright {
   }
   html body .content .presentation .search-buttom button i {
     font-size: 3.5vh;
+  }
+  html body .content .presentation .search-buttom button:hover {
+    background-color: rgb(74, 74, 74);
+    border-color: rgb(74, 74, 74);
   }
   html body .content .presentation .offcanvas-improvise {
     width: 95%;

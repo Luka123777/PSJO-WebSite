@@ -18108,6 +18108,10 @@ html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator
 html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons-group button:focus {
   box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
 }
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons-group button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
 html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .textGuide-group {
   font-family: "Play", sans-serif;
   margin-bottom: 20px;
@@ -18186,6 +18190,10 @@ html body .content .eventsContainer .eventsCreator .buttons-group button a {
 html body .content .eventsContainer .eventsCreator .buttons-group button:focus {
   box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
 }
+html body .content .eventsContainer .eventsCreator .buttons-group button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
 html body .content .eventsContainer .eventsCreator .textGuide-group {
   font-family: "Play", sans-serif;
   margin-bottom: 20px;
@@ -18257,16 +18265,50 @@ html body .content .eventsContainer .eventosCreados .cardEvent .text-content .de
 }
 html body .content .eventsContainer .eventosCreados .cardEvent .text-content .dateCard {
   display: flex;
+  flex-direction: column;
   font-family: "Play", sans-serif;
-  justify-content: end;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .text-content .dateCard .event-ended {
+  display: none;
+  border: 1px solid black;
+  width: auto;
+  padding: 5px;
+  color: #fff;
+  background-color: #000;
 }
 html body .content .eventsContainer .eventosCreados .cardEvent .img-content {
+  position: relative;
   flex: 3;
 }
 html body .content .eventsContainer .eventosCreados .cardEvent .img-content img {
   height: 100%;
-  width: 250px;
+  width: 100%;
   max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .img-content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px;
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .img-content button a {
+  color: #fff;
+  text-decoration: none;
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .img-content button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .eventsContainer .eventosCreados .cardEvent .img-content button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
 }
 html body .content .pagination {
   width: 25%;
@@ -18300,6 +18342,10 @@ html body .content .pagination button:focus {
 html body .content .pagination button:active {
   background-color: #ffffff;
   color: #3a3a3a;
+}
+html body .content .pagination button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
 }
 html body .content .footer {
   background-color: #3a3a3a;

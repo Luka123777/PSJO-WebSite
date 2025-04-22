@@ -183,6 +183,10 @@ html{
                         span{
                             font-family: $letra-secundaria;
                         }
+                        &:hover{
+                            background-color:  rgb(74, 74, 74);
+                            border-color:  rgb(74, 74, 74) ;
+                         }
                     }
                 }
                 .offcanvas-improvise{
@@ -1332,6 +1336,11 @@ html{
                         border: 1px solid #3a3a3a;
                         height: 50px;
                         width: 10vh;
+
+                        &:hover{
+                            background-color:  rgb(74, 74, 74);
+                            border-color:  rgb(74, 74, 74) ;
+                         }
                     }
                 }
             }
@@ -1451,10 +1460,15 @@ html{
                             height: auto;
                             span{
                                 display: none;
+                                
                             }
                             i{
                                 font-size: 3.5vh;
                             }
+                            &:hover{
+                                background-color:  rgb(74, 74, 74);
+                                border-color:  rgb(74, 74, 74) ;
+                             }
                         }
                     }
                     .offcanvas-improvise{
