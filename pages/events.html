@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/CSS/events.css">
     <title>Eventos</title>
 </head>
@@ -88,18 +89,20 @@
             <div class="offcanvas-improvise-body">
                 <div class="eventsCreator">     
                     <div class="buttons-group">
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#createModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
                             <i class="bi bi-magic"></i> Crear 
                         </button>
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                        <button type="button" class="btn btn-primary sweet">
                             <i class="bi bi-search"></i> Buscar 
                         </button>
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#" disabled>
+                        <button type="button" class="btn btn-primary" disabled>
                             <i class="bi bi-trash"></i> Borrar 
                         </button>
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
-                            <i class="bi bi-box-arrow-up-right"></i> Solicitar
-                        </button>
+                       <button type="button" class="btn btn-primary ">
+                        <a href="/pages/contact.html">
+                        <i class="bi bi-box-arrow-up-right"></i> Solicitar
+                        </a>
+                    </button>
                     </div>
     
                     <div class="textGuide-group">
@@ -135,19 +138,17 @@
 
         <div class="eventsContainer rounded">
             <div class="eventsCreator">     
-                
-
                 <div class="buttons-group">
                     <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#createModal">
                         <i class="bi bi-magic"></i> Crear 
                     </button>
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-primary sweet">
                         <i class="bi bi-search"></i> Buscar 
                     </button>
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#" disabled>
+                    <button type="button" class="btn btn-primary" disabled>
                         <i class="bi bi-trash"></i> Borrar 
                     </button>
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-primary ">
                         <a href="/pages/contact.html">
                         <i class="bi bi-box-arrow-up-right"></i> Solicitar
                         </a>
@@ -225,22 +226,21 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
+                            <h4 class="modal-title">Crear Evento</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="NewEventContent">
-                                <h2>Crear Evento</h2>
-                                <input type="text" id="" class="form-control mb-2" placeholder="Título del evento">
-                                <textarea  id="" class="form-control mb-2" placeholder="Descripción del evento"></textarea>
-                                <input id="" type="date" class="form-control mb-2">
-                                <input id="" type="time" class="form-control mb-2">
-                                <input id="" type="file" class="form-control mb-2" accept="image/*">
+                                <input type="text" id="event-title" class="form-control mb-2" placeholder="Título del evento">
+                                <textarea  id="event-description" class="form-control mb-2" placeholder="Descripción del evento"></textarea>
+                                <input id="event-date" type="date" class="form-control mb-2">
+                                <input id="event-time" type="time" class="form-control mb-2">
+                                <input id="event-img" type="file" class="form-control mb-2" accept="image/*">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                            <button type="button" id="eventCreate-accept" class="btn btn-primary">Guardar cambios</button>
                         </div>
                     </div>
                 </div>
@@ -252,6 +252,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="sweetalert2.all.min.js"></script>
     <script src="/js/script.js" ></script>
     <script src="/js/events.js"></script>
 </body>

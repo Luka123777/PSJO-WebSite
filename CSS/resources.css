@@ -17916,6 +17916,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html body {
+  background-image: url(/images/resources/wall-_1_.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 html body header {
   background-image: url("/images/index/header-bg.jpg");
   background-position: center center;

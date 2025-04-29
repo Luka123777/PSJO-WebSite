@@ -37,6 +37,18 @@ const connection = mysql.createConnection({
     });
   });
 
+  app.get('/users', (req, res) => {
+    const sql = 'SELECT * FROM users';
+
+    connection.query(sql, (err, results) =>{
+      if(err) {
+        return res.status(500).send('Error en el servidor')
+      }
+      res.send(results);
+    })
+  })
+
+
   //Borrar datos
   app.delete('/eventos/:id', function(req, res){
     const eventoId = req.params.id;
