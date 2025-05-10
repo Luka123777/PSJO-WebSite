@@ -1,83 +1,50 @@
-//Paginacion de eventos
+async function cargarEventos() {
+  try {
+    // Hacemos el fetch y esperamos la respuesta
+    const respuesta = await fetch('http://localhost:3001/eventos');
+    const data = await respuesta.json(); // Convertimos la respuesta a JSON
 
-document.addEventListener('DOMContentLoaded', () => {
-  const itemsPerPage = 3;
-  let currentPage = 1;
+    // Iteramos sobre los eventos obtenidos
+    data.forEach(evento => {
+      const div = document.createElement('div');
+      div.classList.add('cardEvent', 'cardItem', 'rounded', 'border-3');
 
-  const items = document.querySelectorAll('.cardEvent');
-  const pageIndicator = document.getElementById('page-indicator');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+      // Calculamos las fechas para verificar si el evento ya pasó
+      const fechaEvento = new Date(evento.fecha_evento);
+      const fechaHoy = new Date();
+      fechaEvento.setHours(0, 0, 0, 0);
+      fechaHoy.setHours(0, 0, 0, 0);
 
-  function showPage(page) {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
+      const eventoFinalizado = fechaHoy > fechaEvento;
 
-    items.forEach((item, index) => {
-      if (index >= start && index < end) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
+      // Construimos el contenido HTML de la tarjeta
+      div.innerHTML = `
+        <div class="img-content">
+            <img src="${evento.images}" alt="" class="img-fluid">
+            <button type="button" class="btn btn-primary delete-btn" data-id="${evento.id}">
+              <i class="bi bi-trash"></i>
+            </button>
+        </div>
+        <div class="text-content">
+            <h3 class="tituloCard">${evento.titulo}</h3>
+            <p class="descriptionCard">${evento.descripcion}</p>
+            <p class="dateCard">
+                <span><strong>Fecha del evento: </strong>${formatearFecha(evento.fecha_evento)} - ${evento.hora_evento.slice(0,5)}</span>
+                <span class="event-ended rounded" style="display: ${eventoFinalizado ? 'block' : 'none'};"><strong>¡EVENTO FINALIZADO!</strong></span>
+            </p>
+        </div>
+      `;
+      container.appendChild(div);
     });
 
-    pageIndicator.textContent = `Página ${page}`;
+    // Se ejecuta al terminar de cargar los eventos
+    items = document.querySelectorAll('.cardEvent');
+    showPage(currentPage);
+  } catch (error) {
+    // Manejamos cualquier error que ocurra durante el fetch o el procesamiento
+    console.error('Error al cargar eventos:', error);
   }
+}
 
-  function nextPage() {
-    const maxPage = Math.ceil(items.length / itemsPerPage);
-    if (currentPage < maxPage) {
-      currentPage++;
-      showPage(currentPage);
-    }
-  }
-
-  function prevPage() {
-    if (currentPage > 1) {
-      currentPage--;
-      showPage(currentPage);
-    }
-  }
-
-  prevBtn.addEventListener('click', prevPage);
-  nextBtn.addEventListener('click', nextPage);
-
-  // Mostrar la primera página al cargar
-  showPage(currentPage);
-});
-
-document.getElementById("mostrarEventos").addEventListener("click", () => {
-    fetch("http://localhost:3001/eventos") // Llamada a la API
-        .then(response => response.json()) // Convertimos la respuesta a JSON
-        .then(data => {
-            const container = document.getElementById("eventosContainer");
-            container.innerHTML = ""; // Limpiar antes de agregar nuevos eventos
-
-            if (data.length === 0) {
-                container.innerHTML = "<p>No hay eventos disponibles.</p>";
-                return;
-            }
-
-            // Crear elementos para cada evento
-            data.forEach(evento => {
-                let eventoDiv = document.createElement("div");
-                eventoDiv.classList.add("evento"); 
-
-                let fechaAmigable = new Date(evento.fecha).toLocaleDateString("es-ES", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                });
-
-                eventoDiv.innerHTML = `
-                    <h3>${evento.titulo}</h3>
-                    <p><strong>Fecha:</strong> ${fechaAmigable}</p>
-                    <p>${evento.descripcion}</p>
-                    <hr>
-                `;
-
-                container.appendChild(eventoDiv);
-            });
-        })
-        .catch(error => console.error("Error al obtener los eventos:", error));
-});
+// Llamamos a la función para cargar los eventos
+cargarEventos();

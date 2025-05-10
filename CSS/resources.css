@@ -17922,6 +17922,8 @@ html body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-y: scroll !important;
+  padding-right: 0 !important;
 }
 html body header {
   background-image: url("/images/index/header-bg.jpg");

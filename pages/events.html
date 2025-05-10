@@ -79,6 +79,7 @@
             <button id="openOffcanvasEvents" type="button" class="btn btn-primary createButton" data-bs-toggle="modal" data-bs-target="#">
                 <i class="bi bi-tools"></i> Opciones 
             </button>
+            <!-- <button id="test">test</button> -->
         </div>
 
         <div id="offcanvas" class="offcanvas-improvise">
@@ -92,7 +93,7 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
                             <i class="bi bi-magic"></i> Crear 
                         </button>
-                        <button type="button" class="btn btn-primary sweet">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <i class="bi bi-search"></i> Buscar 
                         </button>
                         <button type="button" class="btn btn-primary" disabled>
@@ -114,6 +115,9 @@
                           </ul>
                     </div>
                     <div class="buttons2Group">
+                        <div>
+                            <p class="fs-6 text-contact rounded">Si posee dudas sobre algún evento, contáctanos por nuestros medios sociales o por <strong><a href="/pages/contact.html">correo<i class="bi bi-box-arrow-up-right"></i></li></a></strong></p>
+                        </div>
                         <div >
                             <a href="https://www.facebook.com/" target="_blank" class="btn btn-facebook w-100">
                               <i class="bi bi-facebook"></i> Facebook
@@ -126,11 +130,6 @@
                             </a>
                           </div>
                     
-                          <div >
-                            <a href="/contacto" class="btn btn-contacto w-100">
-                              <i class="bi bi-envelope-fill"></i> Contacto
-                            </a>
-                          </div>
                     </div>
                 </div>
             </div>
@@ -142,7 +141,7 @@
                     <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#createModal">
                         <i class="bi bi-magic"></i> Crear 
                     </button>
-                    <button type="button" class="btn btn-primary sweet">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <i class="bi bi-search"></i> Buscar 
                     </button>
                     <button type="button" class="btn btn-primary" disabled>
@@ -164,17 +163,20 @@
                       </ul>
                 </div>
                 <div class="buttons2Group">
+                    <div>
+                        <p class="fs-6 text-contact rounded">Si posee dudas sobre algún evento, contáctanos por nuestros medios sociales o por <strong><a href="/pages/contact.html">correo<i class="bi bi-box-arrow-up-right"></i> </li></a></strong></p>
+                    </div>
                     <div >
                         <a href="https://www.facebook.com/" target="_blank" class="btn btn-facebook w-100">
                           <i class="bi bi-facebook"></i> Facebook
                         </a>
-                      </div>
+                    </div>
                 
-                      <div >
+                    <div >
                         <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp w-100">
                           <i class="bi bi-whatsapp"></i> WhatsApp
                         </a>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -223,28 +225,56 @@
         <!-- Se coloca el modal por el problema del responsive -->
         <div class="modal-group">
             <div class="modal fade" tabindex="-1" id="createModal">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Crear Evento</h4>
+                            <h4 class="modal-title">Crear evento</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="NewEventContent">
-                                <input type="text" id="event-title" class="form-control mb-2" placeholder="Título del evento">
-                                <textarea  id="event-description" class="form-control mb-2" placeholder="Descripción del evento"></textarea>
-                                <input id="event-date" type="date" class="form-control mb-2">
-                                <input id="event-time" type="time" class="form-control mb-2">
-                                <input id="event-img" type="file" class="form-control mb-2" accept="image/*">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" id="eventCreate-accept" class="btn btn-primary">Guardar cambios</button>
+                            <form  id="NewEventContent" enctype="multipart/form-data" required>
+                                <input type="text" name="titulo" class="form-control mb-2" placeholder="Título del evento" required>
+                                <textarea  class="form-control mb-2 textForm" name="descripcion" placeholder="Descripción del evento, lugar del evento, etc." required></textarea>
+                                <input  type="date" name="date" class="form-control mb-2" required>
+                                <input type="time" name="time" class="form-control mb-2" required>
+                                <p class="fs-6">Seleccione una imagen relacionada con su evento:</p>
+                                <input type="file" name="imagen" class="form-control mb-2" accept="image/*" required>
+                                <div>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar evento</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Buscar evento<i class="bi bi-search"></i></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="search-content">
+                                <div class="form-floating">
+                                    <input type="search" id="dataEventSearch" class="form-control" id="floatingInput" placeholder="Olla popular mayo" aria-describedby="addon-wrapping">
+                                    <label for="floatingInput">Buscar evento por su titulo</label>
+                                </div>
+                                <button class="btn btn-primary" type="button" id="eventSearch">Buscar</button>
+                            </div>
+                            <ul class="list-group" id="eventResultados"></ul>
+                            <div class="ItemShow-container">
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
         </div>
     </div>
 

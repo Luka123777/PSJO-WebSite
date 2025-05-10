@@ -19,7 +19,8 @@ html{
         background-position: center; 
         background-repeat: no-repeat; 
         background-attachment: fixed;
-        overflow-y: scroll;
+        overflow-y: scroll !important;
+        padding-right: 0 !important;
         header {
             background-image: url('/images/index/header-bg.jpg');
             background-position: center center;
@@ -276,6 +277,19 @@ html{
                             gap: 10px;
                             
                              div{
+                                .text-contact{
+                                    background-color: $gray-400;
+                                    padding-left: 15px;
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    font-family: $letra-secundaria;
+    
+                                    strong{
+                                        a{
+                                            color: $black;
+                                        }
+                                    }
+                                }
                                 
                                 .btn-facebook {
                                     background-color: #3b5998;
@@ -287,10 +301,6 @@ html{
                                     color: white;
                                 }
                               
-                                  .btn-contacto {
-                                    background-color: #6c63ff;
-                                    color: white;
-                                }
                                 .btn-facebook:hover,
                                 .btn-whatsapp:hover,
                                 .btn-contacto:hover {
@@ -377,8 +387,19 @@ html{
                         display: grid;
                         grid-template-rows: repeat(1, 1fr);
                         gap: 10px;
+                        font-family: $letra-secundaria;
                         
                          div{
+                            .text-contact{
+                                background-color: $gray-400;
+                                padding: 10px;
+
+                                strong{
+                                    a{
+                                        color: $black;
+                                    }
+                                }
+                            }
                             
                             .btn-facebook {
                                 background-color: #3b5998;
@@ -389,11 +410,7 @@ html{
                                 background-color: #25D366;
                                 color: white;
                             }
-                          
-                              .btn-contacto {
-                                background-color: #6c63ff;
-                                color: white;
-                            }
+
                             .btn-facebook:hover,
                             .btn-whatsapp:hover,
                             .btn-contacto:hover {
@@ -585,27 +602,222 @@ html{
                 }
             } 
              .modal-group{
-                .modal{
+                #createModal{
                     .modal-dialog{
                         .modal-content{
                             .modal-header{
                                 h4{
                                     font-family: $letra-primaria;
                                 }
+                                button{
+                                    &:focus{
+                                        box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                    }
+                                    
+                                }
 
                             }
                             .modal-body{
-                                .NewEventContent{
-                                    #event-description{
-                                        height: 150px;
-                                    }
+                                #NewEventContent{
+                                    display: flex;
+                                    flex-direction: column;
                                     
+                                    .textForm{
+                                        height: 150px;
+                                        font-family: $letra-secundaria;
+
+                                        &:focus{
+                                            border-color: rgba(58, 58, 58, 0.25);
+                                            box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                        }
+                                        &:hover{
+                                            border-color: rgba(58, 58, 58, 0.25);
+                                            box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                        }
+                                    }
+                                    input{
+                                        font-family: $letra-secundaria;
+
+                                        &:focus{
+                                            border-color: rgba(58, 58, 58, 0.25);
+                                            box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                        }
+                                        &:hover{
+                                            border-color: rgba(58, 58, 58, 0.25);
+                                            box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                        }
+                                    }
+                                    div{
+                                        text-align: right;
+
+                                        .btn-primary{
+                                            font-family: $letra-secundaria;
+                                            background-color: #3a3a3a;
+                                            border-color: #3a3a3a;
+
+                                            &:focus{
+                                                box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                                border: #3a3a3a;
+                                            }
+                                            &:hover{
+                                                background-color:  rgb(74, 74, 74);
+                                                border-color:  rgb(74, 74, 74) ;
+                                            }
+                                            &:active{
+                                                background-color: #ffffff;
+                                                color: #3a3a3a;
+                                            }
+                                        }
+                                        .btn-secondary{
+                                            font-family: $letra-secundaria;
+                                        }
+                                    }
+                                   p{
+                                    font-family: $letra-secundaria;
+                                    font-style: italic;
+                                    margin-top: 5px;
+                                   }
                                 }
                             }
                         }
                     }
                 }
+
+                #staticBackdrop{
+                    .modal-dialog{
+                        .modal-content{
+                            .modal-header{
+                                h1{
+                                    font-family: $letra-primaria;
+                                }
+                                button{
+                                    &:focus{
+                                        box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                    }
+                                    
+                                }
+
+                            }
+                            .modal-body{
+                                height: auto;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2px;
+
+                                .search-content{
+                                    display: flex;
+                                    flex-wrap: nowrap;
+                                    gap: 5px;
+                                    justify-content: center;
+
+                                    .form-floating{
+                                        width: 80%;
+                                    }
+                                    button{
+                                        width: 20%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        font-family: $letra-secundaria;
+                                        background-color: #3a3a3a;
+                                        border-color: #3a3a3a;
+
+                                        &:focus{
+                                            box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                        }
+                                        &:hover{
+                                            background-color:  rgb(74, 74, 74);
+                                            border-color:  rgb(74, 74, 74) ;
+                                        }
+                                    }
+                                }
+
+                                ul{
+                                    a{
+                                        cursor: pointer;
+                                    }
+                                }
+                                .ItemShow-container{
+                                    .cardmodalEvent{
+                                        display: flex;
+                                        flex-direction: row;
+                                        border: 1px solid black;
+
+                                        .text-content{
+                                            flex: 7;
+                                            display: flex;
+                                            justify-content: space-around;
+                                            flex-direction: column;
+                                            padding: 10px;
+
+
+                                            .tituloCard{
+                                                text-align: center;
+                                                font-family: $letra-primaria;
+                                            }
+                                            .descriptionCard{
+                                                text-align: center;
+                                                font-family: $letra-secundaria;
+                                            }
+                                            .dateCard{
+                                                display: flex;
+                                                flex-direction: column;
+                                                font-family: $letra-secundaria;
+                                                justify-content: center;
+                                                gap: 10px;
+                                                text-align: center;
+
+                                                .event-ended{
+                                                    display: none;
+                                                    border: 1px solid black;
+                                                    width: auto;
+                                                    padding: 5px;
+                                                    color: $white;
+                                                    background-color: $black;
+
+                                                }
+                                            }
+                                        }
+                                        .img-content{
+                                                position: relative;
+                                                flex: 3;
+
+                                            img{
+                                                height: 100%;
+                                                width: 100%;
+                                                max-width: 100%;
+                                                object-fit: cover;
+                                            }
+                                            button{
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                margin: 2px;
+                                                font-family: $letra-secundaria;
+                                                background-color: #3a3a3a;
+                                                border-color: #3a3a3a;
+
+                                                a{
+                                                    color: $white;
+                                                    text-decoration: none;
+                                                }
+
+                                                &:focus{
+                                                    box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+                                                }
+                                                &:hover{
+                                                background-color:  rgb(74, 74, 74);
+                                                border-color:  rgb(74, 74, 74) ;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
+                }
+            }
         } 
     }
 }

@@ -17922,7 +17922,8 @@ html body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
+  padding-right: 0 !important;
 }
 html body header {
   background-image: url("/images/index/header-bg.jpg");
@@ -18141,16 +18142,22 @@ html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator
   grid-template-rows: repeat(1, 1fr);
   gap: 10px;
 }
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .text-contact {
+  background-color: #ced4da;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Play", sans-serif;
+}
+html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .text-contact strong a {
+  color: #000;
+}
 html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-facebook {
   background-color: #3b5998;
   color: white;
 }
 html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-whatsapp {
   background-color: #25D366;
-  color: white;
-}
-html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-contacto {
-  background-color: #6c63ff;
   color: white;
 }
 html body .content .offcanvas-improvise .offcanvas-improvise-body .eventsCreator .buttons2Group div .btn-facebook:hover,
@@ -18222,6 +18229,14 @@ html body .content .eventsContainer .eventsCreator .buttons2Group {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   gap: 10px;
+  font-family: "Play", sans-serif;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group div .text-contact {
+  background-color: #ced4da;
+  padding: 10px;
+}
+html body .content .eventsContainer .eventsCreator .buttons2Group div .text-contact strong a {
+  color: #000;
 }
 html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-facebook {
   background-color: #3b5998;
@@ -18229,10 +18244,6 @@ html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-faceb
 }
 html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-whatsapp {
   background-color: #25D366;
-  color: white;
-}
-html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-contacto {
-  background-color: #6c63ff;
   color: white;
 }
 html body .content .eventsContainer .eventsCreator .buttons2Group div .btn-facebook:hover,
@@ -18401,11 +18412,173 @@ html body .content .footer p {
 html body .content .footer .p-copyright {
   border-top: 1px solid white;
 }
-html body .content .modal-group .modal .modal-dialog .modal-content .modal-header h4, html body .content .modal-group .modal .modal-dialog .modal-content .modal-header .h4 {
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-header h4, html body .content .modal-group #createModal .modal-dialog .modal-content .modal-header .h4 {
   font-family: "Roboto Slab", serif;
 }
-html body .content .modal-group .modal .modal-dialog .modal-content .modal-body .NewEventContent #event-description {
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-header button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent {
+  display: flex;
+  flex-direction: column;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent .textForm {
   height: 150px;
+  font-family: "Play", sans-serif;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent .textForm:focus {
+  border-color: rgba(58, 58, 58, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent .textForm:hover {
+  border-color: rgba(58, 58, 58, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent input {
+  font-family: "Play", sans-serif;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent input:focus {
+  border-color: rgba(58, 58, 58, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent input:hover {
+  border-color: rgba(58, 58, 58, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent div {
+  text-align: right;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent div .btn-primary {
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent div .btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+  border: #3a3a3a;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent div .btn-primary:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent div .btn-primary:active {
+  background-color: #ffffff;
+  color: #3a3a3a;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent div .btn-secondary {
+  font-family: "Play", sans-serif;
+}
+html body .content .modal-group #createModal .modal-dialog .modal-content .modal-body #NewEventContent p {
+  font-family: "Play", sans-serif;
+  font-style: italic;
+  margin-top: 5px;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-header h1, html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-header .h1 {
+  font-family: "Roboto Slab", serif;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-header button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .search-content {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  justify-content: center;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .search-content .form-floating {
+  width: 80%;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .search-content button {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .search-content button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .search-content button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body ul a {
+  cursor: pointer;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .text-content {
+  flex: 7;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .text-content .tituloCard {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .text-content .descriptionCard {
+  text-align: center;
+  font-family: "Play", sans-serif;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .text-content .dateCard {
+  display: flex;
+  flex-direction: column;
+  font-family: "Play", sans-serif;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .text-content .dateCard .event-ended {
+  display: none;
+  border: 1px solid black;
+  width: auto;
+  padding: 5px;
+  color: #fff;
+  background-color: #000;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .img-content {
+  position: relative;
+  flex: 3;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .img-content img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .img-content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px;
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .img-content button a {
+  color: #fff;
+  text-decoration: none;
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .img-content button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+html body .content .modal-group #staticBackdrop .modal-dialog .modal-content .modal-body .ItemShow-container .cardmodalEvent .img-content button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
 }
 
 @media (max-width: 991px) {

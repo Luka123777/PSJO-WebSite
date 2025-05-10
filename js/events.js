@@ -1,119 +1,101 @@
-//offcanvas part
 document.addEventListener('DOMContentLoaded', () => {
-    var openOffcanvasEvent = document.getElementById('openOffcanvasEvents');
-    var offcanvasImprovise = document.getElementById('offcanvas');
+  //offcanvas part
+  var openOffcanvasEvent = document.getElementById('openOffcanvasEvents');
+  var offcanvasImprovise = document.getElementById('offcanvas');
 
-    document.getElementById('closeOffcanvas').addEventListener('click', function(close){
-        offcanvasImprovise.classList.remove("open");
-    });
+  document.getElementById('closeOffcanvas').addEventListener('click', function(close){
+      offcanvasImprovise.classList.remove("open");
+  });
 
-   openOffcanvasEvent.addEventListener('click', function(){
-        offcanvasImprovise.classList.add("open");
-   })
-});
-//SweetAlert para el boton de search
-let aviso = document.querySelectorAll('.sweet');
-const originalOverflow = document.body.style.overflow;
+  openOffcanvasEvent.addEventListener('click', function(){
+      offcanvasImprovise.classList.add("open");
+  });
 
-aviso.forEach(function(search){
-  search.addEventListener('click', function(){
-    Swal.fire({
-      title: '¡Hola!',
-      text: 'Probando SweetAlert2 sin movimiento',
-      scrollbarPadding: false,
-      didOpen: () => {
-        document.body.style.overflow = originalOverflow || 'auto';
-        document.body.style.paddingRight = '0px';
-      },
-      willClose: () => {
-        document.body.style.overflow = originalOverflow || 'auto';
-      }
-    });
-  })
-})
+  //Modal bootstrap para el boton de search
+  const lista = document.getElementById('eventResultados');
+  let ItemShow = document.querySelector('.ItemShow-container');
+  async function buscarTitulo(){
+    const inputContent = document.getElementById('dataEventSearch').value.trim();
 
-////PARTE DE BASE DE DATOS FETCH////
+    if(!inputContent) return;
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const itemsPerPage = 3;
-    let currentPage = 1;
-    let items = [];
-  
-    const container = document.getElementById('eventosCreados');
-    const pageIndicator = document.getElementById('page-indicator');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-  
-    function showPage(page) {
-      const start = (page - 1) * itemsPerPage; //0
-      const end = start + itemsPerPage; //3
-  
-      items.forEach((item, index) => {
-        item.style.display = index >= start && index < end ? 'flex' : 'none';
-      });
-      pageIndicator.textContent = `Página ${page}`;
+    let response = await fetch(`http://localhost:3001/eventos/titulo?nombre=${encodeURIComponent(inputContent)}`);
+    //? = Empieza el query param
+    //nombre = clave
+    //${encodeURIComponent(inputContent)} = valor
+    let datosJson = await response.json();
 
-      if(page === 1){
-        prevBtn.disabled = true; 
-      } else if( page !== 1){
-        prevBtn.disabled = false;
-      }
+    mostrarResultados(datosJson);
+  };
 
-      const maxPage = Math.ceil(items.length / itemsPerPage);
-      if (page === maxPage) {
-        nextBtn.disabled = true;
-      } else {
-        nextBtn.disabled = false;
-      }
+  function MostrarEventoBuscado(dataEvent){
+    const div = document.createElement('div');
+    div.classList.add('cardmodalEvent', 'cardItem', 'rounded', 'border-3');
 
+    const fechadataEvent = new Date(dataEvent.fecha_evento);
+    const fechaHoy = new Date();
+    fechadataEvent.setHours(0, 0, 0, 0);
+    fechaHoy.setHours(0, 0, 0, 0);
+
+    const eventoFinalizado = fechaHoy > fechadataEvent;
+
+    div.innerHTML = `
+          <div class="img-content">
+              <img src="${dataEvent.images}" alt="" class="img-fluid">
+          </div>
+          <div class="text-content">
+              <h3 class="tituloCard">${dataEvent.titulo}</h3>
+              <p class="descriptionCard">${dataEvent.descripcion}</p>
+              <p class="dateCard">
+                  <span><strong>Fecha del evento: </strong>${formatearFecha(dataEvent.fecha_evento)} - ${dataEvent.hora_evento.slice(0,5)}</span>
+                  <span class="event-ended rounded" style="display: ${eventoFinalizado ? 'block' : 'none'};"><strong>¡EVENTO FINALIZADO!</strong></span>
+                  </p>
+          </div>
+          
+        `;
+        ItemShow.appendChild(div);
+
+  }
+  function mostrarResultados(eventos){
+    lista.innerHTML = '';
+
+    if (eventos.length === 0){
+      lista.innerHTML = '<li class="list-group-item fw-semibold fst-italic">No se encontraron eventos <i class="bi bi-emoji-frown-fill"></i> </li>'
+      return;
     }
-  
-    function nextPage() {
-      const maxPage = Math.ceil(items.length / itemsPerPage); //2
-      if (currentPage < maxPage) {
-        currentPage++;
-        showPage(currentPage);
-      }
-    }
-  
-    function prevPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        showPage(currentPage);
-      }
-    }
-  
-    prevBtn.addEventListener('click', prevPage);
-    nextBtn.addEventListener('click', nextPage);
+    eventos.forEach(evento => {
+      const item = document.createElement('a');
+      item.classList.add('list-group-item');
 
-    //Evento finalizado
+      item.textContent = evento.titulo;
+      lista.appendChild(item); 
 
-    function formatearFecha(fechaString) {
-      const fecha = new Date(fechaString);
-    
-      const opciones = {
-        weekday: 'long',    // día de la semana
-        day: 'numeric',     // día del mes
-        month: 'long',      // mes completo
-        year: 'numeric'     // año
-      };
-      // Esto devuelve la fecha ya traducida al español
-      const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+      item.addEventListener('click', function(){
+        lista.innerHTML = ""
+        eventoDatos = evento;
+        MostrarEventoBuscado(eventoDatos);
 
-      // Reemplazamos "de" por "del" para el toque final
-      return fechaFormateada.replace(' de ', ' del ').replace(' de ', ' de ');
-    };
+      })
+    })
+  }
+  let buttonSearch = document.querySelector('#eventSearch');
+  buttonSearch.addEventListener('click', function(){
+    lista.innerHTML = ""
+    ItemShow.innerHTML = ""
+    buscarTitulo();
+  });
 
-    //Eventos inexistentes
-      function hayEventos(eventos){
-        return Array.isArray(eventos) && eventos.length > 0;
-      }
+  //PARTE DE BASE DE DATOS FETCH////
+  //get events
+  async function RecargarEventos(){
+    try{
+      let response = await fetch('http://localhost:3001/eventos');
+      let eventoDatos = await response.json();
+      eventoDatos.reverse();
 
-    // Obtener datos
-    fetch('http://localhost:3001/eventos') //Asincrono
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(evento => {
+      container.innerHTML = '';
+
+      eventoDatos.forEach(evento =>{
         const div = document.createElement('div');
         div.classList.add('cardEvent', 'cardItem', 'rounded', 'border-3');
 
@@ -123,43 +105,121 @@ aviso.forEach(function(search){
         fechaHoy.setHours(0, 0, 0, 0);
 
         const eventoFinalizado = fechaHoy > fechaEvento;
-            //EXPLICAAAAAAR
-          div.innerHTML = `
-            <div class="img-content">
-                <img src="/images/Events/bg-events-_1_.webp" alt="" class="img-fluid">
-                <button type="button" class="btn btn-primary delete-btn" data-id="${evento.id}">
-                  <i class="bi bi-trash"></i> 
-                </button>
-            </div>
-            <div class="text-content">
-                <h3 class="tituloCard">${evento.titulo}</h3>
-                <p class="descriptionCard">${evento.descripcion}</p>
-                <p class="dateCard">
-                    <span><strong>Fecha del evento: </strong>${formatearFecha(evento.fecha_evento)} - ${evento.hora_evento.slice(0,5)}</span>
-                    <span class="event-ended rounded" style="display: ${eventoFinalizado ? 'block' : 'none'};"><strong>¡EVENTO FINALIZADO!</strong></span>
-                    </p>
-            </div>
-            
-          `
-          ;
-  
-          container.appendChild(div);
-        });
-  
-        // Se ejecuta una vez el fetch terminado
-        items = document.querySelectorAll('.cardEvent');
-        showPage(currentPage);
-      })
-    .catch(error => console.error('Error al cargar eventos:', error));
-  });
 
+        div.innerHTML = `
+          <div class="img-content">
+              <img src="${evento.images}" alt="" class="img-fluid">
+              <button type="button" class="btn btn-primary delete-btn" data-id="${evento.id}">
+                <i class="bi bi-trash"></i> 
+              </button>
+          </div>
+          <div class="text-content">
+              <h3 class="tituloCard">${evento.titulo}</h3>
+              <p class="descriptionCard">${evento.descripcion}</p>
+              <p class="dateCard">
+                  <span><strong>Fecha del evento: </strong>${formatearFecha(evento.fecha_evento)} - ${evento.hora_evento.slice(0,5)}</span>
+                  <span class="event-ended rounded" style="display: ${eventoFinalizado ? 'block' : 'none'};"><strong>¡EVENTO FINALIZADO!</strong></span>
+                  </p>
+          </div>
+          
+        `;
+        container.appendChild(div);
+      })
+      items = document.querySelectorAll('.cardEvent');
+      showPage(currentPage);
+
+    } catch(error){
+      console.error('Error al recargar eventos', error);
+    };
+  };
+  
+  //Boton para test y parte de test:
+  // let testButton = document.querySelector('#test');
+  //   testButton.addEventListener('click', ()=>{
+    
+  // });
+
+  const itemsPerPage = 3;
+  let currentPage = 1;
+  let items = [];
+
+  const container = document.getElementById('eventosCreados');
+  const pageIndicator = document.getElementById('page-indicator');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function showPage(page) {
+    const start = (page - 1) * itemsPerPage; //0
+    const end = start + itemsPerPage; //3
+
+    items.forEach((item, index) => {
+      item.style.display = index >= start && index < end ? 'flex' : 'none';
+    });
+    pageIndicator.textContent = `Página ${page}`;
+
+    if(page === 1){
+      prevBtn.disabled = true; 
+    } else if( page !== 1){
+      prevBtn.disabled = false;
+    }
+
+    const maxPage = Math.ceil(items.length / itemsPerPage);
+    if (page === maxPage) {
+      nextBtn.disabled = true;
+    } else {
+      nextBtn.disabled = false;
+    }
+
+  }
+
+  function nextPage() {
+    const maxPage = Math.ceil(items.length / itemsPerPage); //2
+    if (currentPage < maxPage) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  }
+
+  prevBtn.addEventListener('click', prevPage);
+  nextBtn.addEventListener('click', nextPage);
+
+  //Evento finalizado
+
+  function formatearFecha(fechaString) {
+    const fecha = new Date(fechaString);
+  
+    const opciones = {
+      weekday: 'long',    // día de la semana
+      day: 'numeric',     // día del mes
+      month: 'long',      // mes completo
+      year: 'numeric'     // año
+    };
+    const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+
+    return fechaFormateada.replace(' de ', ' del ').replace(' de ', ' de ');
+  };
+  //Eventos inexistentes
+    function hayEventos(eventos){
+      return Array.isArray(eventos) && eventos.length > 0;
+    }
+
+  // Obtener datos
+  RecargarEventos();
+    //get admins
   fetch('http://localhost:3001/users')
   .then(response => response.json())
   .then(data => {
 
     let admin_user = data[0].nombre;
     let admin_senha = data[0].senha;
-   
+    
 
     document.addEventListener('click', function(e) {
       const boton = e.target.closest('.delete-btn');
@@ -176,11 +236,11 @@ aviso.forEach(function(search){
         confirmButtonText: 'Borrar',
         cancelButtonText: 'Cancelar',
         didOpen: () => {
-          document.body.style.overflow = originalOverflow || 'auto';
-          document.body.style.paddingRight = '0px';
+          // document.body.style.overflow = originalOverflow || 'auto';
+          // document.body.style.paddingRight = '0px';
         },
         willClose: () => {
-          document.body.style.overflow = originalOverflow || 'auto';
+          // document.body.style.overflow = originalOverflow || 'auto';
         }
       }).then((result) => {
         if (result.isConfirmed) {
@@ -226,6 +286,7 @@ aviso.forEach(function(search){
                   didOpen: () => {
                     document.body.style.overflow = originalOverflow || 'auto';
                     document.body.style.paddingRight = '0px';
+                    RecargarEventos();
                   },
                   willClose: () => {
                     document.body.style.overflow = originalOverflow || 'auto';
@@ -236,8 +297,7 @@ aviso.forEach(function(search){
                 })
                 .then(res => res.json())
                 .then(data => {
-                  boton.closest('.cardEvent').remove();
-                  showPage(currentPage);
+                  RecargarEventos();
                 });
               } else {
                 Swal.fire({
@@ -260,6 +320,72 @@ aviso.forEach(function(search){
       });
     });
   })
+  //create events
+  //Evita que redirija la pagina haciendo un AJAX
+  let formulary = document.querySelector('#NewEventContent');
+  formulary.addEventListener('submit', async function (e) {
+    e.preventDefault(); 
+    function eventoCreadoExito(){
+      localStorage.setItem('eventoExito', 'true');
+    }
+    function eventoCreadoSinExito(){
+      localStorage.setItem('eventoFail', 'false');
+    }
 
-//Eliminar un event
+    const form = e.target;
+    const formData = new FormData(form);
 
+    try {
+      const response = await fetch('http://localhost:3001/eventos', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        eventoCreadoExito();
+        form.reset();
+
+      } else {
+        eventoCreadoSinExito();
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+  //Avisos de exito o fail de la creacion de un evento
+  if(localStorage.getItem('eventoFail') === 'false'){
+    console.log("Evento creado sin exito");
+    localStorage.removeItem('eventoFail');
+  
+    Swal.fire({
+      title:'Error al crear el evento',
+      text: 'Asegúrate de que todos los campos del formulario estén correctos.',
+      icon: 'error',
+      scrollbarPadding: false,
+      didOpen: () => {
+        document.body.style.overflow = originalOverflow || 'auto';
+        document.body.style.paddingRight = '0px';
+      },
+      willClose: () => {
+        document.body.style.overflow = originalOverflow || 'auto';
+      }
+    });
+  } else if(localStorage.getItem("eventoExito") === "true"){
+    console.log("Evento creado con exito");
+    localStorage.removeItem("eventoExito"); 
+  
+    Swal.fire({
+      title:'Evento creado con éxito',
+      icon: 'success',
+      scrollbarPadding: false,
+      didOpen: () => {
+        document.body.style.overflow = originalOverflow || 'auto';
+        document.body.style.paddingRight = '0px';
+      },
+      willClose: () => {
+        document.body.style.overflow = originalOverflow || 'auto';
+      }
+    });
+  };
+});
