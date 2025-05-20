@@ -95,6 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       container.innerHTML = '';
 
+      //Eventos inexistentes
+      if(eventoDatos.length === 0){
+        let SinDatos = document.createElement('div');
+        SinDatos.classList.add('SinEvento', 'rounded')
+        SinDatos.innerHTML = 'Sin eventos... por el momento <i class="bi bi-emoji-laughing-fill"></i>';
+
+        container.appendChild(SinDatos)
+      }
+
       eventoDatos.forEach(evento =>{
         const div = document.createElement('div');
         div.classList.add('cardEvent', 'cardItem', 'rounded', 'border-3');
@@ -109,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         div.innerHTML = `
           <div class="img-content">
               <img src="${evento.images}" alt="" class="img-fluid">
-              <button type="button" class="btn btn-primary delete-btn" data-id="${evento.id}">
+              <button type="button" class="btn btn-primary delete-btn" data-id="${evento.id}" data-images="${evento.images}">
                 <i class="bi bi-trash"></i> 
               </button>
           </div>
@@ -119,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p class="dateCard">
                   <span><strong>Fecha del evento: </strong>${formatearFecha(evento.fecha_evento)} - ${evento.hora_evento.slice(0,5)}</span>
                   <span class="event-ended rounded" style="display: ${eventoFinalizado ? 'block' : 'none'};"><strong>¡EVENTO FINALIZADO!</strong></span>
-                  </p>
+              </p>
           </div>
           
         `;
@@ -205,14 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return fechaFormateada.replace(' de ', ' del ').replace(' de ', ' de ');
   };
-  //Eventos inexistentes
-    function hayEventos(eventos){
-      return Array.isArray(eventos) && eventos.length > 0;
-    }
 
   // Obtener datos
   RecargarEventos();
-    //get admins
+
+  //get admins
   fetch('http://localhost:3001/users')
   .then(response => response.json())
   .then(data => {
@@ -220,12 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let admin_user = data[0].nombre;
     let admin_senha = data[0].senha;
     
-
+    //Autenticacion para eliminar un evento
     document.addEventListener('click', function(e) {
-      const boton = e.target.closest('.delete-btn');
-      if (!boton) return;
-    
+      const boton = e.target.closest('.delete-btn');    
       const id = boton.dataset.id;
+      const imagesDataDelete = boton.dataset.images;
     
       Swal.fire({
         title: '¿Seguro que quieres eliminar el card?',
@@ -256,11 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cancelButtonText: 'Cancelar',
             scrollbarPadding: false,
             didOpen: () => {
-              document.body.style.overflow = originalOverflow || 'auto';
-              document.body.style.paddingRight = '0px';
+              // document.body.style.overflow = originalOverflow || 'auto';
+              // document.body.style.paddingRight = '0px';
             },
             willClose: () => {
-              document.body.style.overflow = originalOverflow || 'auto';
+              // document.body.style.overflow = originalOverflow || 'auto';
             },
             preConfirm: () => {
               const username = document.getElementById('username').value;
@@ -284,16 +289,21 @@ document.addEventListener('DOMContentLoaded', () => {
                   icon: 'success',
                   scrollbarPadding: false,
                   didOpen: () => {
-                    document.body.style.overflow = originalOverflow || 'auto';
-                    document.body.style.paddingRight = '0px';
+                    // document.body.style.overflow = originalOverflow || 'auto';
+                    // document.body.style.paddingRight = '0px';
                     RecargarEventos();
                   },
                   willClose: () => {
-                    document.body.style.overflow = originalOverflow || 'auto';
+                    // document.body.style.overflow = originalOverflow || 'auto';
                   }
                 });
+                //Elimina un evento seleccionado
                 fetch(`http://localhost:3001/eventos/${id}`, {
-                  method: 'DELETE'
+                  method: 'DELETE',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ imagesDataDelete })
                 })
                 .then(res => res.json())
                 .then(data => {
@@ -306,11 +316,11 @@ document.addEventListener('DOMContentLoaded', () => {
                   icon: 'error',
                   scrollbarPadding: false,
                   didOpen: () => {
-                    document.body.style.overflow = originalOverflow || 'auto';
-                    document.body.style.paddingRight = '0px';
+                    // document.body.style.overflow = originalOverflow || 'auto';
+                    // document.body.style.paddingRight = '0px';
                   },
                   willClose: () => {
-                    document.body.style.overflow = originalOverflow || 'auto';
+                    // document.body.style.overflow = originalOverflow || 'auto';
                   }
                 });
               }
@@ -363,29 +373,28 @@ document.addEventListener('DOMContentLoaded', () => {
       text: 'Asegúrate de que todos los campos del formulario estén correctos.',
       icon: 'error',
       scrollbarPadding: false,
-      didOpen: () => {
-        document.body.style.overflow = originalOverflow || 'auto';
-        document.body.style.paddingRight = '0px';
-      },
-      willClose: () => {
-        document.body.style.overflow = originalOverflow || 'auto';
-      }
+      // didOpen: () => {
+      //   document.body.style.overflow = originalOverflow || 'auto';
+      //   document.body.style.paddingRight = '0px';
+      // },
+      // willClose: () => {
+      //   document.body.style.overflow = originalOverflow || 'auto';
+      // }
     });
   } else if(localStorage.getItem("eventoExito") === "true"){
-    console.log("Evento creado con exito");
     localStorage.removeItem("eventoExito"); 
   
     Swal.fire({
       title:'Evento creado con éxito',
       icon: 'success',
       scrollbarPadding: false,
-      didOpen: () => {
-        document.body.style.overflow = originalOverflow || 'auto';
-        document.body.style.paddingRight = '0px';
-      },
-      willClose: () => {
-        document.body.style.overflow = originalOverflow || 'auto';
-      }
+      // didOpen: () => {
+      //   document.body.style.overflow = originalOverflow || 'auto';
+      //   document.body.style.paddingRight = '0px';
+      // },
+      // willClose: () => {
+      //   document.body.style.overflow = originalOverflow || 'auto';
+      // }
     });
   };
 });

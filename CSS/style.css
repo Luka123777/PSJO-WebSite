@@ -369,10 +369,15 @@ html {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin: 0 auto;
-    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 40px;
     margin-bottom: 10vh;
+    margin-top: 2vh;
+    align-items: center;
+    background-color: #fff3e0;
 }
-
 
 .donations-description h2{
     font-family: "Roboto Slab", serif;
@@ -429,6 +434,221 @@ html {
     object-fit:cover;
 }
 
+/* Events */
+.eventsPresentation-container{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    gap: 20px;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+    align-items: center;
+}
+
+.SinEvento {
+  background-color: #000; 
+  color: #fff; 
+  padding: 20px;
+  text-align: center;
+  font-family: "Play", sans-serif;
+  font-size: larger;
+}
+.eventsShow{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    /* padding: 20px; */
+}
+
+.eventsIndex {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.eventsIndex .text-content {
+  flex: 7;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.eventsIndex .text-content .tituloCard {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+
+}
+
+.eventsIndex .text-content .dateCard {
+    display: flex;
+    flex-direction: column;
+    font-family: "Play", sans-serif;
+    font-size: large; 
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.eventsIndex .text-content .dateCard .event-ended {
+  display: none;
+  border: 1px solid black;
+  width: auto;
+  padding: 5px;
+  color: #fff; 
+  background-color: #000; 
+}
+
+.eventsIndex .img-content {
+  position: relative;
+  flex: 3;
+}
+
+.eventsIndex .img-content img {
+  height: 300px;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.eventsIndex .img-content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px;
+  font-family: "Play", sans-serif;
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+
+.eventsIndex .img-content button a {
+  color: #fff; /* $white */
+  text-decoration: none;
+}
+
+.eventsIndex .img-content button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
+}
+
+.eventsIndex .img-content button:hover {
+  background-color: rgb(74, 74, 74);
+  border-color: rgb(74, 74, 74);
+}
+/* ////////////////// */
+.eventText-content{
+    display: flex;
+    flex-direction: column;
+}
+.eventText-content h3{
+    font-family: "Roboto Slab", serif;
+    text-align: center;
+    font-size: 4vh;
+
+}
+.eventText-content p{
+    font-family: "Play", sans-serif;
+    font-size: 2.5vh;
+    text-align:justify;
+
+}
+.eventText-content a button{
+    background-color: #3a3a3a;
+    font-family: "Play", sans-serif;
+    border-color: #3a3a3a;
+}
+
+.eventText-content a button:hover{
+    background-color:  rgb(74, 74, 74);
+    border-color:  rgb(74, 74, 74) ;
+    
+}
+.eventText-content a button:focus{
+    outline: none; 
+    box-shadow: none;
+}
+.eventText-content .eventText-responsive{
+    display: none;
+}
+
+/* resourcesShow */
+.resourcesShow-container{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+    gap: 40px;
+}
+.resourcesText1{
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+}
+.resourcesText1 p{
+    font-family: "Play", sans-serif;
+    background-color: burlywood;
+    padding: 30px;
+}
+.resourcesImages{
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    background-image: url('/images/index/bg-showResources.webp');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.resourcesImages .resourcesImages-title{
+    font-family: "Roboto Slab", serif;
+    text-align: center;
+}
+.resourcesImages .resourcesImages-text{
+    font-family: "Play", sans-serif;
+    text-align: justify;
+}
+.resourcesImages a button{
+    width: 50%;
+    margin: 0 auto;
+}
+.resourcesImages a button{
+    background-color: #3a3a3a;
+    font-family: "Play", sans-serif;
+    border-color: #3a3a3a;
+}
+
+.resourcesImages a button:hover{
+    background-color:  rgb(74, 74, 74);
+    border-color:  rgb(74, 74, 74) ;
+    
+}
+.resourcesImages a button:focus{
+    outline: none; 
+    box-shadow: none;
+}
+
+.resourcesText2{
+    padding-right: 10px;
+    padding-left: 10px;    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+}
+.resourcesText2 p{
+    font-family: "Play", sans-serif;
+    padding: 30px;
+    background-color: #ffe0b2;
+}
 
 /* Footer/oportunity */
 .footer {
@@ -590,7 +810,36 @@ html {
         grid-template-rows: auto auto;
        
     }
-
+    /* Eventos */
+    .eventsPresentation-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .event-content{
+        order: 2;
+    }
+    .eventText-content{
+        order: 1;
+    }
+    .eventText-content .eventText-normal{
+        display: none;
+    }
+    .eventText-content .eventText-responsive{
+        display: block;
+    }
+    /* ResourcesShow */
+    .resourcesShow-container{
+        flex-direction: column;
+    }
+    .resourcesImages{
+        order: 1;
+    }
+    .resourcesText1{
+        order: 2;
+    }
+    .resourcesText2{
+        order: 3;
+    }
 
      /* Empieza el footer */
 

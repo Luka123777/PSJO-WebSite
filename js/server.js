@@ -6,6 +6,7 @@ let multer = require('multer');
 require('dotenv').config();
 let fs = require('fs');
 let path = require('path');
+const { error } = require('console');
 
 app.use(cors());
 app.use(express.json());
@@ -105,6 +106,7 @@ const connection = mysql.createConnection({
   app.delete('/eventos/:id', function(req, res){
     const eventoId = req.params.id;
     const sql = 'DELETE FROM eventos WHERE id = ?';
+    const {imagesDataDelete} = req.body;
 
     connection.query(sql, [eventoId], (err, result) => {
       if (err) {
@@ -115,7 +117,16 @@ const connection = mysql.createConnection({
       if (result.affectedRows === 0) {
         return res.status(404).send('Evento no encontrado');
       }
-  
+
+      if(result && result.affectedRows > 0){
+        const filepath = path.join(__dirname, '..', imagesDataDelete);
+        fs.unlink(filepath, (error) => {
+          if (error) {
+            console.error('Error al eliminar la imagen de los recursos:', error);
+            return res.status(500).json({ error: 'No se pudo eliminar el archivo' });
+          }
+        });
+      }
       res.send({ message: 'Evento eliminado correctamente' });
     });
   });
